@@ -55,8 +55,8 @@
   compartments, local signalling hubs. Spatial transcriptomics (ST) keeps the coordinates,
   so we can ask those questions directly.
   \vskip0.5em
-  For an ML audience: ST hands you a \textbf{geometry} (points in a plane) with a
-  high-dimensional signal (expression) attached, plus rich structure to exploit.
+  Concretely, ST hands you a \textbf{geometry} (points in a plane) with a high-dimensional
+  signal (expression) attached, plus rich structure to exploit.
   \end{column}
   \begin{column}{0.44\textwidth}
   \centering
@@ -182,7 +182,7 @@
 
 \begin{frame}{Cell-cell communication: the standard logic}
   \begin{columns}[T]
-  \begin{column}{0.56\textwidth}
+  \begin{column}{0.50\textwidth}
   Score a \textbf{ligand-receptor (LR)} pair: ligand $L$ high in cell type $A$, receptor
   $R$ high in a neighbouring type $B$.
   \begin{itemize}
@@ -193,11 +193,11 @@
   \vskip0.3em
   The score lives on an \textbf{edge} $A\!-\!B$. It is \textbf{pairwise by construction}.
   \end{column}
-  \begin{column}{0.42\textwidth}
+  \begin{column}{0.48\textwidth}
   \centering
   \begin{tikzpicture}[scale=1]
     \node[box] (A) at (0,0) {A\\(ligand $L$)};
-    \node[box] (B) at (2.4,0) {B\\(receptor $R$)};
+    \node[box] (B) at (4.2,0) {B\\(receptor $R$)};
     \draw[arr] (A)--node[lab,above]{$L\!\to\!R$}(B);
   \end{tikzpicture}
   \end{column}
@@ -205,7 +205,7 @@
   \refline{Efremova et al. CellPhoneDB. \emph{Nat Protoc} 2020; Jin et al. CellChat. \emph{Nat Commun} 2021; Dimitrov et al. LIANA. \emph{Nat Commun} 2022; Cang \& Nie. COMMOT. \emph{Nat Methods} 2023.}
 \end{frame}
 
-\begin{frame}{Challenges (where you come in)}
+\begin{frame}{Challenges}
   \begin{itemize}
     \item \textbf{Segmentation.} Cell boundaries are estimated; mis-assigned transcripts
       corrupt co-expression and communication.
