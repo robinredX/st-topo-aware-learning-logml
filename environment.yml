@@ -1,0 +1,37 @@
+name: env-st-topo
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.11
+  - pip
+  - numpy
+  - scipy
+  - pandas
+  - pyarrow
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - h5py
+  - tqdm
+  - jupyterlab
+  - ipywidgets
+  - ipykernel
+  - networkx
+  # spatial transcriptomics
+  - scanpy>=1.10
+  - anndata>=0.10
+  - squidpy>=1.6
+  # topology
+  - gudhi            # simplicial complexes, Vietoris-Rips, persistent homology
+  # deep learning (CPU by default; install a CUDA build of pytorch if you have a GPU)
+  - pytorch
+  - pip:
+      # graph neural networks
+      - torch-geometric
+      # topological deep learning
+      - toponetx        # data structures for simplicial / cell / combinatorial complexes
+      - topomodelx      # topological neural network layers (message passing over cells)
+      # cell-cell communication resources and baselines
+      - liana           # ligand-receptor resources and CCC methods
+      - decoupler

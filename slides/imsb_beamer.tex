@@ -1,0 +1,78 @@
+% Shared Beamer style for the spatial transcriptomics course.
+% Input from each deck with: \input{../theme/imsb_beamer.tex}
+\usetheme{default}
+\usefonttheme{professionalfonts}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{xcolor}
+
+\definecolor{imsbblue}{RGB}{31,95,140}
+\definecolor{imsbdark}{RGB}{20,63,93}
+\definecolor{imsbgrey}{RGB}{90,90,90}
+
+\setbeamercolor{structure}{fg=imsbblue}
+\setbeamercolor{frametitle}{bg=imsbblue,fg=white}
+\setbeamercolor{title}{fg=imsbdark}
+\setbeamercolor{caption name}{fg=imsbblue}
+\setbeamercolor{itemize item}{fg=imsbblue}
+\setbeamercolor{itemize subitem}{fg=imsbblue}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize item}{\small\raise0.3pt\hbox{\textbullet}}
+\setbeamertemplate{itemize subitem}{\scriptsize\raise0.3pt\hbox{--}}
+
+\setbeamertemplate{frametitle}{%
+  \nointerlineskip
+  \begin{beamercolorbox}[wd=\paperwidth,ht=2.6ex,dp=1.2ex,leftskip=0.3cm,rightskip=0.3cm]{frametitle}%
+    \usebeamerfont{frametitle}\insertframetitle%
+  \end{beamercolorbox}%
+}
+
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.34\paperwidth,ht=2.4ex,dp=1ex,center]{author in head/foot}%
+    \usebeamercolor[fg]{}\tiny\insertshortauthor%
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.4\paperwidth,ht=2.4ex,dp=1ex,center]{title in head/foot}%
+    \tiny\insertshorttitle%
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.26\paperwidth,ht=2.4ex,dp=1ex,center]{date in head/foot}%
+    \tiny\insertshortdate{}\hspace*{1em}\insertframenumber/\inserttotalframenumber%
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\setbeamercolor{author in head/foot}{bg=imsbdark,fg=white}
+\setbeamercolor{title in head/foot}{bg=imsbdark,fg=white}
+\setbeamercolor{date in head/foot}{bg=imsbdark,fg=white}
+
+\setbeamertemplate{title page}{%
+  \vskip2.0em
+  {\usebeamercolor[fg]{title}\Large\bfseries\inserttitle\par}
+  \vskip1.2em
+  {\large\insertauthor\par}
+  \vskip0.4em
+  {\color{black}\insertinstitute\par}
+  \vskip1.4em
+  {\insertdate\par}
+}
+
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric,fit,backgrounds,calc}
+\tikzset{
+  box/.style={draw=imsbblue,thick,rounded corners,align=center,fill=imsbblue!7,inner sep=5pt,font=\footnotesize},
+  alt/.style={draw=imsbgrey,thick,rounded corners,align=center,fill=imsbgrey!10,inner sep=5pt,font=\footnotesize},
+  lab/.style={align=center,font=\scriptsize,text=black},
+  arr/.style={-{Stealth[length=2.4mm]},thick,draw=imsbdark},
+  line/.style={thick,draw=imsbblue},
+}
+\newcommand{\refline}[1]{\vfill{\scriptsize\color{black} #1}}
+\newcommand{\figslot}[2]{%
+  \begin{center}
+  \setlength{\fboxsep}{9pt}%
+  \fcolorbox{imsbblue}{imsbblue!4}{\parbox{0.84\linewidth}{\centering\footnotesize
+  \textcolor{imsbblue}{\textbf{[ figure slot ]}}\\[3pt] #1 \\[4pt]
+  {\scriptsize\color{black} suggested source: #2}}}
+  \end{center}}

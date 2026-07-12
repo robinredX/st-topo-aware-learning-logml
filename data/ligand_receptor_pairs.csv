@@ -1,0 +1,978 @@
+source,target,source_uniprot,target_uniprot,directionality,classification
+CDH1,KLRG1,P12830,Q96E93,Ligand-Receptor,Adhesion by Cadherin
+CDH2,CDH2,P19022,P19022,Adhesion-Adhesion,Adhesion by Cadherin
+CDH2,FCER2,P19022,P06734,Ligand-Receptor,Adhesion by Cadherin
+CDH3,CDH3,P22223,P22223,Adhesion-Adhesion,Adhesion by Cadherin
+CDH5,CDH5,P33151,P33151,Adhesion-Adhesion,Adhesion by Cadherin
+CDH6,CDH6,P55285,P55285,Adhesion-Adhesion,Adhesion by Cadherin
+CDH7,CDH7,Q9ULB5,Q9ULB5,Adhesion-Adhesion,Adhesion by Cadherin
+CADM1,CADM1,Q9BY67,Q9BY67,Adhesion-Adhesion,Adhesion by CADM
+CADM1,NECTIN3,Q9BY67,Q9NQS3,Adhesion-Adhesion,Adhesion by CADM
+CADM3,CADM1,Q8N126,Q9BY67,Adhesion-Adhesion,Adhesion by CADM
+CADM3,CADM4,Q8N126,Q8NFZ8,Adhesion-Adhesion,Adhesion by CADM
+CADM3,EPB41L1,Q8N126,Q9H4G0,Adhesion-Adhesion,Adhesion by CADM
+CADM3,NECTIN3,Q8N126,Q9NQS3,Adhesion-Adhesion,Adhesion by CADM
+CEACAM1,CD209,P13688,Q9NNX6,Adhesion-Adhesion,Adhesion by CEAM
+CEACAM1,CEACAM6,P13688,P40199,Adhesion-Adhesion,Adhesion by CEAM
+CEACAM1,CEACAM8,P13688,P31997,Adhesion-Adhesion,Adhesion by CEAM
+CEACAM1,SELE,P13688,P16581,Adhesion-Adhesion,Adhesion by CEAM
+CEACAM5,CD1D,P06731,P15813,Adhesion-Adhesion,Adhesion by CEAM
+CEACAM5,CD8A,P06731,P01732,Adhesion-Adhesion,Adhesion by CEAM
+CEACAM5,CEACAM1,P06731,P13688,Adhesion-Adhesion,Adhesion by CEAM
+CEACAM5,CEACAM6,P06731,P40199,Adhesion-Adhesion,Adhesion by CEAM
+CEACAM6,CEACAM6,P40199,P40199,Adhesion-Adhesion,Adhesion by CEAM
+CEACAM8,CEACAM6,P31997,P40199,Adhesion-Adhesion,Adhesion by CEAM
+COL3A1,ADGRG1,P02461,Q9Y653,Adhesion-Adhesion,Adhesion by Collagen/Integrin
+COL4A1,ADGRG6,P02462,Q86SQ4,Adhesion-Adhesion,Adhesion by Collagen/Integrin
+COL4A2,ADGRG6,P08572,Q86SQ4,Adhesion-Adhesion,Adhesion by Collagen/Integrin
+COL4A3,ADGRG6,Q01955,Q86SQ4,Adhesion-Adhesion,Adhesion by Collagen/Integrin
+COL4A4,ADGRG6,P53420,Q86SQ4,Adhesion-Adhesion,Adhesion by Collagen/Integrin
+COL4A5,ADGRG6,P29400,Q86SQ4,Adhesion-Adhesion,Adhesion by Collagen/Integrin
+COL4A6,ADGRG6,Q14031,Q86SQ4,Adhesion-Adhesion,Adhesion by Collagen/Integrin
+DSC1,DSG2,Q08554,Q14126,Adhesion-Adhesion,Adhesion by Desmosome
+DSC2,DSG2,Q02487,Q14126,Adhesion-Adhesion,Adhesion by Desmosome
+DSG1,DSC1,Q02413,Q08554,Adhesion-Adhesion,Adhesion by Desmosome
+DSG1,DSC2,Q02413,Q02487,Adhesion-Adhesion,Adhesion by Desmosome
+DSG1,DSC3,Q02413,Q14574,Adhesion-Adhesion,Adhesion by Desmosome
+DSG2,DSC3,Q14126,Q14574,Adhesion-Adhesion,Adhesion by Desmosome
+DAG1,CELSR3,Q14118,Q9NYQ7,Adhesion-Adhesion,
+GJA1,GJA1,P17302,P17302,Gap-Gap,Adhesion by GAP junction
+GJA1,GJA5,P17302,P36382,Gap-Gap,Adhesion by GAP junction
+GJA3,GJA1,Q9Y6H8,P17302,Gap-Gap,Adhesion by GAP junction
+GJA3,GJA3,Q9Y6H8,Q9Y6H8,Gap-Gap,Adhesion by GAP junction
+GJA3,GJA5,Q9Y6H8,P36382,Gap-Gap,Adhesion by GAP junction
+GJA3,GJC1,Q9Y6H8,P36383,Gap-Gap,Adhesion by GAP junction
+GJA5,GJA5,P36382,P36382,Gap-Gap,Adhesion by GAP junction
+GJC1,GJA1,P36383,P17302,Gap-Gap,Adhesion by GAP junction
+GJC1,GJA5,P36383,P36382,Gap-Gap,Adhesion by GAP junction
+GJC1,GJC1,P36383,P36383,Gap-Gap,Adhesion by GAP junction
+ICAM1,ITGAL,P05362,P20701,Ligand-Receptor,Adhesion by ICAM
+ICAM1,SPN,P05362,P16150,Adhesion-Adhesion,Adhesion by ICAM
+ICAM2,CD209,P13598,Q9NNX6,Ligand-Receptor,Adhesion by ICAM
+ICAM3,CD209,P32942,Q9NNX6,Ligand-Receptor,Adhesion by ICAM
+ICAM3,CLEC4M,P32942,Q9H2X3,Ligand-Receptor,Adhesion by ICAM
+JAM2,JAM3,P57087,Q9BX67,Adhesion-Adhesion,Adhesion by JAM
+JAM3,JAM3,Q9BX67,Q9BX67,Adhesion-Adhesion,Adhesion by JAM
+L1CAM,L1CAM,P32004,P32004,Adhesion-Adhesion,Adhesion by L1CAM
+NECTIN1,CADM3,Q15223,Q8N126,Adhesion-Adhesion,Adhesion by Nectin
+NECTIN1,NECTIN3,Q15223,Q9NQS3,Adhesion-Adhesion,Adhesion by Nectin
+NECTIN1,NECTIN4,Q15223,Q96NY8,Adhesion-Adhesion,Adhesion by Nectin
+NECTIN2,NECTIN3,Q92692,Q9NQS3,Adhesion-Adhesion,Adhesion by Nectin
+F2,F2R,P00734,P25116,Ligand-Receptor,Adhesion by Prothrombin
+F2,F2RL2,P00734,O00254,Ligand-Receptor,Adhesion by Prothrombin
+F2,F2RL3,P00734,Q96RI0,Ligand-Receptor,Adhesion by Prothrombin
+F2,THBD,P00734,P07204,Ligand-Receptor,Adhesion by Prothrombin
+ADM,RAMP3,P35318,O60896,Ligand-Receptor,Signaling by Adrenomedullin
+AGRP,MC2R,O00253,Q01718,Ligand-Receptor,Signaling by Agouti-related protein
+AGRP,MC3R,O00253,P41968,Ligand-Receptor,Signaling by Agouti-related protein
+AGRP,MC4R,O00253,P32245,Ligand-Receptor,Signaling by Agouti-related protein
+AGRP,MC5R,O00253,P33032,Ligand-Receptor,Signaling by Agouti-related protein
+ASIP,MC1R,P42127,Q01726,Ligand-Receptor,Signaling by Agouti-related protein
+AGRN,PTPRS,O00468,Q13332,Ligand-Receptor,Signaling by Agrin
+IAPP,CALCR,P10997,P30988,Ligand-Receptor,Signaling by Amylin
+APP,CD74,P05067,P04233,Ligand-Receptor,Signaling by Amyloid-beta precursor protein
+APP,FPR2,P05067,P25090,Ligand-Receptor,Signaling by Amyloid-beta precursor protein
+APP,PLXNA4,P05067,Q9HCM2,Ligand-Receptor,Signaling by Amyloid-beta precursor protein
+APP,SORL1,P05067,Q92673,Ligand-Receptor,Signaling by Amyloid-beta precursor protein
+APP,TNFRSF21,P05067,O75509,Ligand-Receptor,Signaling by Amyloid-beta precursor protein
+APLP2,PIGR,Q06481,P01833,Ligand-Receptor,Signaling by Amyloid-like protein
+APLP2,PLXNA4,Q06481,Q9HCM2,Ligand-Receptor,Signaling by Amyloid-like protein
+ANGPT1,TEK,Q15389,Q02763,Ligand-Receptor,Signaling by Angiopoietin
+ANGPT2,TEK,O15123,Q02763,Ligand-Receptor,Signaling by Angiopoietin
+ANGPT4,TEK,Q9Y264,Q02763,Ligand-Receptor,Signaling by Angiopoietin
+AGT,AGTR1,P01019,P30556,Ligand-Receptor,Signaling by Angiotensinogen
+AGT,AGTR2,P01019,P50052,Ligand-Receptor,Signaling by Angiotensinogen
+ANXA1,FPR1,P04083,P21462,Ligand-Receptor,Signaling by Annexin
+ANXA1,FPR2,P04083,P25090,Ligand-Receptor,Signaling by Annexin
+ANXA1,FPR3,P04083,P25089,Ligand-Receptor,Signaling by Annexin
+APELA,APLNR,P0DMC3,P35414,Ligand-Receptor,Signaling by Apelin
+APLN,APLNR,Q9ULZ1,P35414,Ligand-Receptor,Signaling by Apelin
+APOA1,ABCA1,P02647,O95477,Ligand-Receptor,Signaling by Apolipoprotein
+APOB,APOBR,P04114,Q0VD83,Ligand-Receptor,Signaling by Apolipoprotein
+NGF,NGFR,P01138,P08138,Ligand-Receptor,Signaling by Beta-nerve growth factor
+NGF,NTRK1,P01138,P04629,Ligand-Receptor,Signaling by Beta-nerve growth factor
+NGF,SORT1,P01138,Q99523,Ligand-Receptor,Signaling by Beta-nerve growth factor
+BDNF,NGFR,P23560,P08138,Ligand-Receptor,Signaling by Brain-derived neurotrophic factor
+BDNF,NTRK2,P23560,Q16620,Ligand-Receptor,Signaling by Brain-derived neurotrophic factor
+BDNF,SORT1,P23560,Q99523,Ligand-Receptor,Signaling by Brain-derived neurotrophic factor
+CALCA,CALCR,P01258,P30988,Ligand-Receptor,Signaling by Calcitonin
+CALCB,CALCR,P10092,P30988,Ligand-Receptor,Signaling by Calcitonin
+CLSTN1,NRXN1,O94985,Q9ULB1,Ligand-Receptor,Signaling by Calsyntenin
+CLSTN1,NRXN2,O94985,P58401,Ligand-Receptor,Signaling by Calsyntenin
+CLSTN1,NRXN3,O94985,Q9HDB5,Ligand-Receptor,Signaling by Calsyntenin
+CLSTN2,NRXN1,Q9H4D0,Q9ULB1,Ligand-Receptor,Signaling by Calsyntenin
+CLSTN2,NRXN2,Q9H4D0,P58401,Ligand-Receptor,Signaling by Calsyntenin
+CLSTN2,NRXN3,Q9H4D0,Q9HDB5,Ligand-Receptor,Signaling by Calsyntenin
+CLSTN3,NRXN1,Q9BQT9,Q9ULB1,Ligand-Receptor,Signaling by Calsyntenin
+CLSTN3,NRXN2,Q9BQT9,P58401,Ligand-Receptor,Signaling by Calsyntenin
+CLSTN3,NRXN3,Q9BQT9,Q9HDB5,Ligand-Receptor,Signaling by Calsyntenin
+CTSG,F2RL3,P08311,Q96RI0,Ligand-Receptor,Signaling by Cathepsin
+CTSG,FPR1,P08311,P21462,Ligand-Receptor,Signaling by Cathepsin
+CCL1,CCR8,P22362,P51685,Ligand-Receptor,Signaling by Chemokines
+CCL11,ACKR2,P51671,O00590,Ligand-Receptor,Signaling by Chemokines
+CCL11,CCR3,P51671,P51677,Ligand-Receptor,Signaling by Chemokines
+CCL11,DPP4,P51671,P27487,Ligand-Receptor,Signaling by Chemokines
+CCL13,ACKR2,Q99616,O00590,Ligand-Receptor,Signaling by Chemokines
+CCL13,CCR2,Q99616,P41597,Ligand-Receptor,Signaling by Chemokines
+CCL13,CCR3,Q99616,P51677,Ligand-Receptor,Signaling by Chemokines
+CCL14,ACKR2,Q16627,O00590,Ligand-Receptor,Signaling by Chemokines
+CCL14,CCR1,Q16627,P32246,Ligand-Receptor,Signaling by Chemokines
+CCL14,CCR3,Q16627,P51677,Ligand-Receptor,Signaling by Chemokines
+CCL15,CCR1,Q16663,P32246,Ligand-Receptor,Signaling by Chemokines
+CCL15,CCR3,Q16663,P51677,Ligand-Receptor,Signaling by Chemokines
+CCL16,CCR1,O15467,P32246,Ligand-Receptor,Signaling by Chemokines
+CCL16,CCR2,O15467,P41597,Ligand-Receptor,Signaling by Chemokines
+CCL16,CCR8,O15467,P51685,Ligand-Receptor,Signaling by Chemokines
+CCL16,HRH4,O15467,Q9H3N8,Ligand-Receptor,Signaling by Chemokines
+CCL17,CCR4,Q92583,P51679,Ligand-Receptor,Signaling by Chemokines
+CCL18,CCR8,P55774,P51685,Ligand-Receptor,Signaling by Chemokines
+CCL19,ACKR4,Q99731,Q9NPB9,Ligand-Receptor,Signaling by Chemokines
+CCL19,CCR7,Q99731,P32248,Ligand-Receptor,Signaling by Chemokines
+CCL19,CCRL2,Q99731,O00421,Ligand-Receptor,Signaling by Chemokines
+CCL2,ACKR1,P13500,Q16570,Ligand-Receptor,Signaling by Chemokines
+CCL2,ACKR2,P13500,O00590,Ligand-Receptor,Signaling by Chemokines
+CCL2,CCR2,P13500,P41597,Ligand-Receptor,Signaling by Chemokines
+CCL20,CCR6,P78556,P51684,Ligand-Receptor,Signaling by Chemokines
+CCL21,ACKR4,O00585,Q9NPB9,Ligand-Receptor,Signaling by Chemokines
+CCL21,CCR7,O00585,P32248,Ligand-Receptor,Signaling by Chemokines
+CCL22,CCR4,O00626,P51679,Ligand-Receptor,Signaling by Chemokines
+CCL22,DPP4,O00626,P27487,Ligand-Receptor,Signaling by Chemokines
+CCL23,CCR1,P55773,P32246,Ligand-Receptor,Signaling by Chemokines
+CCL23,FPR2,P55773,P25090,Ligand-Receptor,Signaling by Chemokines
+CCL24,CCR3,O00175,P51677,Ligand-Receptor,Signaling by Chemokines
+CCL25,ACKR4,O15444,Q9NPB9,Ligand-Receptor,Signaling by Chemokines
+CCL25,CCR9,O15444,P51686,Ligand-Receptor,Signaling by Chemokines
+CCL26,CCR1,Q9Y258,P32246,Ligand-Receptor,Signaling by Chemokines
+CCL26,CCR2,Q9Y258,P41597,Ligand-Receptor,Signaling by Chemokines
+CCL26,CCR3,Q9Y258,P51677,Ligand-Receptor,Signaling by Chemokines
+CCL27,CCR10,Q9Y4X3,P46092,Ligand-Receptor,Signaling by Chemokines
+CCL28,CCR10,Q9NRJ3,P46092,Ligand-Receptor,Signaling by Chemokines
+CCL3,ACKR2,P10147,O00590,Ligand-Receptor,Signaling by Chemokines
+CCL3,CCR1,P10147,P32246,Ligand-Receptor,Signaling by Chemokines
+CCL3,CCR3,P10147,P51677,Ligand-Receptor,Signaling by Chemokines
+CCL3,CCR5,P10147,P51681,Ligand-Receptor,Signaling by Chemokines
+CCL3L1,CCR1,P16619,P32246,Ligand-Receptor,Signaling by Chemokines
+CCL3L1,CCR3,P16619,P51677,Ligand-Receptor,Signaling by Chemokines
+CCL4,ACKR2,P13236,O00590,Ligand-Receptor,Signaling by Chemokines
+CCL4,CCR5,P13236,P51681,Ligand-Receptor,Signaling by Chemokines
+CCL5,ACKR1,P13501,Q16570,Ligand-Receptor,Signaling by Chemokines
+CCL5,ACKR2,P13501,O00590,Ligand-Receptor,Signaling by Chemokines
+CCL5,CCR1,P13501,P32246,Ligand-Receptor,Signaling by Chemokines
+CCL5,CCR3,P13501,P51677,Ligand-Receptor,Signaling by Chemokines
+CCL5,CCR4,P13501,P51679,Ligand-Receptor,Signaling by Chemokines
+CCL5,CCR5,P13501,P51681,Ligand-Receptor,Signaling by Chemokines
+CCL5,GPR75,P13501,O95800,Ligand-Receptor,Signaling by Chemokines
+CCL7,ACKR2,P80098,O00590,Ligand-Receptor,Signaling by Chemokines
+CCL7,CCR1,P80098,P32246,Ligand-Receptor,Signaling by Chemokines
+CCL7,CCR2,P80098,P41597,Ligand-Receptor,Signaling by Chemokines
+CCL7,CCR3,P80098,P51677,Ligand-Receptor,Signaling by Chemokines
+CCL7,CCR5,P80098,P51681,Ligand-Receptor,Signaling by Chemokines
+CCL8,ACKR2,P80075,O00590,Ligand-Receptor,Signaling by Chemokines
+CCL8,CCR1,P80075,P32246,Ligand-Receptor,Signaling by Chemokines
+CCL8,CCR2,P80075,P41597,Ligand-Receptor,Signaling by Chemokines
+CCL8,CCR3,P80075,P51677,Ligand-Receptor,Signaling by Chemokines
+CCL8,CCR5,P80075,P51681,Ligand-Receptor,Signaling by Chemokines
+PPBP,CXCR1,P02775,P25024,Ligand-Receptor,Signaling by Chemokines
+PPBP,CXCR2,P02775,P25025,Ligand-Receptor,Signaling by Chemokines
+CX3CL1,CX3CR1,P78423,P49238,Ligand-Receptor,Signaling by Chemokines
+CXCL1,ACKR1,P09341,Q16570,Ligand-Receptor,Signaling by Chemokines
+CXCL1,CXCR1,P09341,P25024,Ligand-Receptor,Signaling by Chemokines
+CXCL1,CXCR2,P09341,P25025,Ligand-Receptor,Signaling by Chemokines
+CXCL10,CXCR3,P02778,P49682,Ligand-Receptor,Signaling by Chemokines
+CXCL10,DPP4,P02778,P27487,Ligand-Receptor,Signaling by Chemokines
+CXCL11,ACKR3,O14625,P25106,Ligand-Receptor,Signaling by Chemokines
+CXCL11,CXCR3,O14625,P49682,Ligand-Receptor,Signaling by Chemokines
+CXCL11,DPP4,O14625,P27487,Ligand-Receptor,Signaling by Chemokines
+CXCL12,CXCR4,P48061,P61073,Ligand-Receptor,Signaling by Chemokines
+CXCL12,DPP4,P48061,P27487,Ligand-Receptor,Signaling by Chemokines
+CXCL13,ACKR4,O43927,Q9NPB9,Ligand-Receptor,Signaling by Chemokines
+CXCL13,CXCR5,O43927,P32302,Ligand-Receptor,Signaling by Chemokines
+CXCL14,CXCR4,O95715,P61073,Ligand-Receptor,Signaling by Chemokines
+CXCL16,CXCR6,Q9H2A7,O00574,Ligand-Receptor,Signaling by Chemokines
+CXCL2,CXCR2,P19875,P25025,Ligand-Receptor,Signaling by Chemokines
+CXCL2,DPP4,P19875,P27487,Ligand-Receptor,Signaling by Chemokines
+CXCL3,CXCR2,P19876,P25025,Ligand-Receptor,Signaling by Chemokines
+CXCL5,CXCR1,P42830,P25024,Ligand-Receptor,Signaling by Chemokines
+CXCL5,CXCR2,P42830,P25025,Ligand-Receptor,Signaling by Chemokines
+CXCL6,CXCR1,P80162,P25024,Ligand-Receptor,Signaling by Chemokines
+CXCL6,CXCR2,P80162,P25025,Ligand-Receptor,Signaling by Chemokines
+CXCL8,ACKR1,P10145,Q16570,Ligand-Receptor,Signaling by Chemokines
+CXCL8,CXCR1,P10145,P25024,Ligand-Receptor,Signaling by Chemokines
+CXCL8,CXCR2,P10145,P25025,Ligand-Receptor,Signaling by Chemokines
+CXCL9,CXCR3,Q07325,P49682,Ligand-Receptor,Signaling by Chemokines
+CXCL9,DPP4,Q07325,P27487,Ligand-Receptor,Signaling by Chemokines
+CCK,CCKAR,P06307,P32238,Ligand-Receptor,Signaling by Cholecystokinin
+CCK,CCKBR,P06307,P32239,Ligand-Receptor,Signaling by Cholecystokinin
+C10orf99,GPR15,Q6UWK7,P49685,Ligand-Receptor,
+C10orf99,SUSD2,Q6UWK7,Q9UGT4,Ligand-Receptor,
+C1QL1,ADGRB3,O75973,O60242,Ligand-Receptor,Signaling by Complement
+C1QL2,ADGRB3,Q7Z5L3,O60242,Ligand-Receptor,Signaling by Complement
+C1QL3,ADGRB3,Q5VWW1,O60242,Ligand-Receptor,Signaling by Complement
+C1QL4,ADGRB3,Q86Z23,O60242,Ligand-Receptor,Signaling by Complement
+C3,C3AR1,P01024,Q16581,Ligand-Receptor,Signaling by Complement
+C3,C5AR2,P01024,Q9P296,Ligand-Receptor,Signaling by Complement
+C4A,C5AR2,P0C0L4,Q9P296,Ligand-Receptor,Signaling by Complement
+C5,C5AR1,P01031,P21730,Ligand-Receptor,Signaling by Complement
+C5,C5AR2,P01031,Q9P296,Ligand-Receptor,Signaling by Complement
+CRH,CRHR1,P06850,P34998,Ligand-Receptor,Signaling by Corticotropin-releasing factor
+CRH,CRHR2,P06850,Q13324,Ligand-Receptor,Signaling by Corticotropin-releasing factor
+CSF1,CSF1R,P09603,P07333,Ligand-Receptor,Signaling by Colony-Stimulating factor
+CSF3,CSF3R,P09919,Q99062,Ligand-Receptor,Signaling by Colony-Stimulating factor
+DHH,HHIP,O43323,Q96QV1,Ligand-Ligand,Signaling by Desert hedgehog
+EDN1,EDNRA,P05305,P25101,Ligand-Receptor,Signaling by Endothelin
+EDN1,EDNRB,P05305,P24530,Ligand-Receptor,Signaling by Endothelin
+EDN2,EDNRA,P20800,P25101,Ligand-Receptor,Signaling by Endothelin
+EDN2,EDNRB,P20800,P24530,Ligand-Receptor,Signaling by Endothelin
+EDN3,EDNRA,P14138,P25101,Ligand-Receptor,Signaling by Endothelin
+EDN3,EDNRB,P14138,P24530,Ligand-Receptor,Signaling by Endothelin
+ENTPD1,ADORA1,P49961,P30542,Ligand-Receptor,Signaling by Ectonucleoside
+ENTPD1,ADORA2A,P49961,P29274,Ligand-Receptor,Signaling by Ectonucleoside
+ENTPD1,ADORA2B,P49961,P29275,Ligand-Receptor,Signaling by Ectonucleoside
+ENTPD1,ADORA3,P49961,P0DMS8,Ligand-Receptor,Signaling by Ectonucleoside
+EFNA1,EPHA1,P20827,P21709,Ligand-Receptor,Signaling by Ephrin
+EFNA1,EPHA2,P20827,P29317,Ligand-Receptor,Signaling by Ephrin
+EFNA1,EPHA3,P20827,P29320,Ligand-Receptor,Signaling by Ephrin
+EFNA1,EPHA4,P20827,P54764,Ligand-Receptor,Signaling by Ephrin
+EFNA1,EPHA5,P20827,P54756,Ligand-Receptor,Signaling by Ephrin
+EFNA1,EPHA7,P20827,Q15375,Ligand-Receptor,Signaling by Ephrin
+EFNA1,EPHA8,P20827,P29322,Ligand-Receptor,Signaling by Ephrin
+EFNA2,EPHA1,O43921,P21709,Ligand-Receptor,Signaling by Ephrin
+EFNA2,EPHA2,O43921,P29317,Ligand-Receptor,Signaling by Ephrin
+EFNA2,EPHA3,O43921,P29320,Ligand-Receptor,Signaling by Ephrin
+EFNA2,EPHA4,O43921,P54764,Ligand-Receptor,Signaling by Ephrin
+EFNA2,EPHA5,O43921,P54756,Ligand-Receptor,Signaling by Ephrin
+EFNA2,EPHA7,O43921,Q15375,Ligand-Receptor,Signaling by Ephrin
+EFNA2,EPHA8,O43921,P29322,Ligand-Receptor,Signaling by Ephrin
+EFNA3,EPHA1,P52797,P21709,Ligand-Receptor,Signaling by Ephrin
+EFNA3,EPHA2,P52797,P29317,Ligand-Receptor,Signaling by Ephrin
+EFNA3,EPHA3,P52797,P29320,Ligand-Receptor,Signaling by Ephrin
+EFNA3,EPHA4,P52797,P54764,Ligand-Receptor,Signaling by Ephrin
+EFNA3,EPHA5,P52797,P54756,Ligand-Receptor,Signaling by Ephrin
+EFNA3,EPHA7,P52797,Q15375,Ligand-Receptor,Signaling by Ephrin
+EFNA3,EPHA8,P52797,P29322,Ligand-Receptor,Signaling by Ephrin
+EFNA4,EPHA1,P52798,P21709,Ligand-Receptor,Signaling by Ephrin
+EFNA4,EPHA2,P52798,P29317,Ligand-Receptor,Signaling by Ephrin
+EFNA4,EPHA3,P52798,P29320,Ligand-Receptor,Signaling by Ephrin
+EFNA4,EPHA4,P52798,P54764,Ligand-Receptor,Signaling by Ephrin
+EFNA4,EPHA5,P52798,P54756,Ligand-Receptor,Signaling by Ephrin
+EFNA4,EPHA7,P52798,Q15375,Ligand-Receptor,Signaling by Ephrin
+EFNA4,EPHA8,P52798,P29322,Ligand-Receptor,Signaling by Ephrin
+EFNA5,EPHA1,P52803,P21709,Ligand-Receptor,Signaling by Ephrin
+EFNA5,EPHA2,P52803,P29317,Ligand-Receptor,Signaling by Ephrin
+EFNA5,EPHA3,P52803,P29320,Ligand-Receptor,Signaling by Ephrin
+EFNA5,EPHA4,P52803,P54764,Ligand-Receptor,Signaling by Ephrin
+EFNA5,EPHA5,P52803,P54756,Ligand-Receptor,Signaling by Ephrin
+EFNA5,EPHA7,P52803,Q15375,Ligand-Receptor,Signaling by Ephrin
+EFNA5,EPHA8,P52803,P29322,Ligand-Receptor,Signaling by Ephrin
+EFNA5,EPHB2,P52803,P29323,Ligand-Receptor,Signaling by Ephrin
+EFNB1,EPHA2,P98172,P29317,Ligand-Receptor,Signaling by Ephrin
+EFNB1,EPHA4,P98172,P54764,Ligand-Receptor,Signaling by Ephrin
+EFNB1,EPHB1,P98172,P54762,Ligand-Receptor,Signaling by Ephrin
+EFNB1,EPHB2,P98172,P29323,Ligand-Receptor,Signaling by Ephrin
+EFNB1,EPHB3,P98172,P54753,Ligand-Receptor,Signaling by Ephrin
+EFNB1,EPHB4,P98172,P54760,Ligand-Receptor,Signaling by Ephrin
+EFNB1,EPHB6,P98172,O15197,Ligand-Receptor,Signaling by Ephrin
+EFNB2,EPHA4,P52799,P54764,Ligand-Receptor,Signaling by Ephrin
+EFNB2,EPHB1,P52799,P54762,Ligand-Receptor,Signaling by Ephrin
+EFNB2,EPHB2,P52799,P29323,Ligand-Receptor,Signaling by Ephrin
+EFNB2,EPHB3,P52799,P54753,Ligand-Receptor,Signaling by Ephrin
+EFNB2,EPHB4,P52799,P54760,Ligand-Receptor,Signaling by Ephrin
+EFNB2,EPHB6,P52799,O15197,Ligand-Receptor,Signaling by Ephrin
+EFNB3,EPHA4,Q15768,P54764,Ligand-Receptor,Signaling by Ephrin
+EFNB3,EPHB1,Q15768,P54762,Ligand-Receptor,Signaling by Ephrin
+EFNB3,EPHB2,Q15768,P29323,Ligand-Receptor,Signaling by Ephrin
+EFNB3,EPHB3,Q15768,P54753,Ligand-Receptor,Signaling by Ephrin
+EFNB3,EPHB4,Q15768,P54760,Ligand-Receptor,Signaling by Ephrin
+EFNB3,EPHB6,Q15768,O15197,Ligand-Receptor,Signaling by Ephrin
+AREG,EGFR,P15514,P00533,Ligand-Receptor,Signaling by Epidermal growth factor
+BTC,EGFR,P35070,P00533,Ligand-Receptor,Signaling by Epidermal growth factor
+EGF,EGFR,P01133,P00533,Ligand-Receptor,Signaling by Epidermal growth factor
+EPGN,EGFR,Q6UW88,P00533,Ligand-Receptor,Signaling by Epidermal growth factor
+EREG,EGFR,O14944,P00533,Ligand-Receptor,Signaling by Epidermal growth factor
+EREG,ERBB4,O14944,Q15303,Ligand-Receptor,Signaling by Epidermal growth factor
+HBEGF,EGFR,Q99075,P00533,Ligand-Receptor,Signaling by Epidermal growth factor
+HBEGF,ERBB2,Q99075,P04626,Ligand-Receptor,Signaling by Epidermal growth factor
+HBEGF,ERBB4,Q99075,Q15303,Ligand-Receptor,Signaling by Epidermal growth factor
+FCER2,CR2,P06734,P20023,Receptor-Receptor,Signaling by FC receptor
+FCER2,FGFR2,P06734,P21802,Receptor-Receptor,Signaling by FC receptor
+FGF1,FGFR1,P05230,P11362,Ligand-Receptor,Signaling by Fibroblast growth factor
+FGF1,FGFR2,P05230,P21802,Ligand-Receptor,Signaling by Fibroblast growth factor
+FGF1,FGFR3,P05230,P22607,Ligand-Receptor,Signaling by Fibroblast growth factor
+FGF1,FGFR4,P05230,P22455,Ligand-Receptor,Signaling by Fibroblast growth factor
+FGF10,FGFR2,O15520,P21802,Ligand-Receptor,Signaling by Fibroblast growth factor
+FGF17,FGFR3,O60258,P22607,Ligand-Receptor,Signaling by Fibroblast growth factor
+FGF2,FGFR1,P09038,P11362,Ligand-Receptor,Signaling by Fibroblast growth factor
+FGF2,FGFR2,P09038,P21802,Ligand-Receptor,Signaling by Fibroblast growth factor
+FGF2,FGFR3,P09038,P22607,Ligand-Receptor,Signaling by Fibroblast growth factor
+FGF2,FGFR4,P09038,P22455,Ligand-Receptor,Signaling by Fibroblast growth factor
+FGF20,FGFR3,Q9NP95,P22607,Ligand-Receptor,Signaling by Fibroblast growth factor
+FGF22,FGFR2,Q9HCT0,P21802,Ligand-Receptor,Signaling by Fibroblast growth factor
+FGF3,FGFR2,P11487,P21802,Ligand-Receptor,Signaling by Fibroblast growth factor
+FGF4,FGFR1,P08620,P11362,Ligand-Receptor,Signaling by Fibroblast growth factor
+FGF5,FGFR1,P12034,P11362,Ligand-Receptor,Signaling by Fibroblast growth factor
+FGF6,FGFR1,P10767,P11362,Ligand-Receptor,Signaling by Fibroblast growth factor
+FGF7,FGFR2,P21781,P21802,Ligand-Receptor,Signaling by Fibroblast growth factor
+FGF8,FGFR3,P55075,P22607,Ligand-Receptor,Signaling by Fibroblast growth factor
+FGF9,FGFR3,P31371,P22607,Ligand-Receptor,Signaling by Fibroblast growth factor
+FGL1,LAG3,Q08830,P18627,Ligand-Receptor,Signaling by Fibroblast growth factor
+NCAM1,FGFR1,P13591,P11362,Ligand-Receptor,Signaling by Fibroblast growth factor
+FLRT1,ADGRL1,Q9NZU1,O94910,Ligand-Receptor,Signaling by Fibronectin
+FLRT1,ADGRL3,Q9NZU1,Q9HAR2,Ligand-Receptor,Signaling by Fibronectin
+FLRT2,ADGRL1,O43155,O94910,Ligand-Receptor,Signaling by Fibronectin
+FLRT2,ADGRL3,O43155,Q9HAR2,Ligand-Receptor,Signaling by Fibronectin
+FLRT3,ADGRL2,Q9NZU0,O95490,Ligand-Receptor,Signaling by Fibronectin
+FLRT3,ADGRL3,Q9NZU0,Q9HAR2,Ligand-Receptor,Signaling by Fibronectin
+GAL,GALR1,P22466,P47211,Ligand-Receptor,Signaling by Galanin
+GAL,GALR2,P22466,O43603,Ligand-Receptor,Signaling by Galanin
+GAL,GALR3,P22466,O60755,Ligand-Receptor,Signaling by Galanin
+GALP,GALR1,Q9UBC7,P47211,Ligand-Receptor,Signaling by Galanin
+GALP,GALR2,Q9UBC7,O43603,Ligand-Receptor,Signaling by Galanin
+GALP,GALR3,Q9UBC7,O60755,Ligand-Receptor,Signaling by Galanin
+LGALS3,MERTK,P17931,Q12866,Ligand-Receptor,Signaling by Galectin
+LGALS9,HAVCR2,O00182,Q8TDQ0,Ligand-Receptor,Signaling by Galectin
+LGALS9,P4HB,O00182,P07237,Ligand-Receptor,Signaling by Galectin
+GAST,ADGRG1,P01350,Q9Y653,Ligand-Receptor,Signaling by Gastrin
+GAST,CCKAR,P01350,P32238,Ligand-Receptor,Signaling by Gastrin
+GAST,CCKBR,P01350,P32239,Ligand-Receptor,Signaling by Gastrin
+GIP,GIPR,P09681,P48546,Ligand-Receptor,Signaling by Gastrin
+GRP,GRPR,P07492,P30550,Ligand-Receptor,Signaling by Gastrin
+GRP,NMBR,P07492,P28336,Ligand-Receptor,Signaling by Gastrin
+GAS6,AXL,Q14393,P30530,Ligand-Receptor,Signaling by Growth arrest
+GAS6,MERTK,Q14393,Q12866,Ligand-Receptor,Signaling by Growth arrest
+GAS6,TYRO3,Q14393,Q06418,Ligand-Receptor,Signaling by Growth arrest
+BTC,ERBB3,P35070,P21860,Ligand-Receptor,Signaling by Betacellulin
+BTC,ERBB4,P35070,Q15303,Ligand-Receptor,Signaling by Betacellulin
+GHRH,GHRHR,P01286,Q02643,Ligand-Receptor,Signaling by Growth hormone-releasing hormone
+GHRL,GHRHR,Q9UBU3,Q02643,Ligand-Receptor,Signaling by Growth hormone-releasing hormone
+GHRL,GHSR,Q9UBU3,Q92847,Ligand-Receptor,Signaling by Growth hormone-releasing hormone
+GHRL,GPR39,Q9UBU3,O43194,Ligand-Receptor,Signaling by Growth hormone-releasing hormone
+HLA-A,KIR3DL1,HLAA,P43629,Ligand-Receptor,Signaling by HLA
+HLA-B,KIR3DL2,HLAB,P43630,Ligand-Receptor,Signaling by HLA
+HLA-C,KIR2DL1,HLAC,P43626,Ligand-Receptor,Signaling by HLA
+HLA-C,KIR2DL3,HLAC,P43628,Ligand-Receptor,Signaling by HLA
+HLA-E,KLRC1,P13747,P26715,Ligand-Receptor,Signaling by HLA
+HLA-E,KLRC2,P13747,P26717,Ligand-Receptor,Signaling by HLA
+HLA-E,KLRK1,P13747,P26718,Ligand-Receptor,Signaling by HLA
+HLA-F,KIR3DL1,P30511,P43629,Ligand-Receptor,Signaling by HLA
+HLA-F,KIR3DL2,P30511,P43630,Ligand-Receptor,Signaling by HLA
+HLA-F,KIR3DS1,P30511,Q14943,Ligand-Receptor,Signaling by HLA
+HLA-F,LILRB1,P30511,Q8NHL6,Ligand-Receptor,Signaling by HLA
+HLA-F,LILRB2,P30511,Q8N423,Ligand-Receptor,Signaling by HLA
+HLA-G,LILRB1,P17693,Q8NHL6,Ligand-Receptor,Signaling by HLA
+HLA-G,LILRB2,P17693,Q8N423,Ligand-Receptor,Signaling by HLA
+MT-RNR2,FPR2,Q8IVG9,P25090,Ligand-Receptor,Signaling by Humanin
+MT-RNR2,FPR3,Q8IVG9,P25089,Ligand-Receptor,Signaling by Humanin
+IHH,HHIP,Q14623,Q96QV1,Ligand-Ligand,Signaling by Indian hedgehog
+INS,INSR,P01308,P06213,Ligand-Receptor,Signaling by Insulin-like precursor
+INSL3,RXFP2,P51460,Q8WXD0,Ligand-Receptor,Signaling by Insulin-like precursor
+INSL5,RXFP4,Q9Y5Q6,Q8TDU9,Ligand-Receptor,Signaling by Insulin-like precursor
+IGF1,IGF1R,P05019,P08069,Ligand-Receptor,Signaling by Insulin-like growth factor
+IGF2,IGF1R,P01344,P08069,Ligand-Receptor,Signaling by Insulin-like growth factor
+IGF2,IGF2R,P01344,P11717,Ligand-Receptor,Signaling by Insulin-like growth factor
+IGFBP3,TMEM219,P17936,Q86XT9,Ligand-Receptor,Signaling by Insulin-like growth factor
+IGFL1,IGFLR1,Q6UW32,Q9H665,Ligand-Receptor,Signaling by Insulin-like growth factor
+IGFL2,IGFLR1,Q6UWQ7,Q9H665,Ligand-Receptor,Signaling by Insulin-like growth factor
+IGFL3,IGFLR1,Q6UXB1,Q9H665,Ligand-Receptor,Signaling by Insulin-like growth factor
+IL13,IL13RA2,P35225,Q14627,Ligand-Receptor,Signaling by Interleukin
+IL1RAP,PTPRF,Q9NPH3,P10586,Adhesion-Adhesion,Signaling by Interleukin
+IL34,CSF1R,Q6ZMJ4,P07333,Ligand-Receptor,Signaling by Interleukin
+KNG1,BDKRB1,P01042,P46663,Ligand-Receptor,Signaling by Kininogen
+KNG1,BDKRB2,P01042,P30411,Ligand-Receptor,Signaling by Kininogen
+KNG1,RXFP4,P01042,Q8TDU9,Ligand-Receptor,Signaling by Kininogen
+LEFTY1,TDGF1,O75610,P13385,Ligand-Receptor,Signaling by Left-right determination factor
+LEFTY2,TDGF1,O00292,P13385,Ligand-Receptor,Signaling by Left-right determination factor
+CLEC2A,KLRF2,Q6UVW9,D3W0D1,Ligand-Receptor,Signaling by Leptin
+CLEC2B,KLRF1,Q92478,Q9NZS2,Ligand-Receptor,Signaling by Leptin
+LRRC4B,PTPRD,Q9NT99,P23468,Ligand-Receptor,Signaling by Leucine Rich Repeat And Fibronectin
+LRRC4B,PTPRF,Q9NT99,P10586,Ligand-Receptor,Signaling by Leucine Rich Repeat And Fibronectin
+LRRC4B,PTPRS,Q9NT99,Q13332,Ligand-Receptor,Signaling by Leucine Rich Repeat And Fibronectin
+LRRC4C,PTPRF,Q9HCJ2,P10586,Ligand-Receptor,Signaling by Leucine Rich Repeat And Fibronectin
+LRFN4,PTPRD,Q6PJG9,P23468,Ligand-Receptor,Signaling by Leucine Rich Repeat And Fibronectin
+LRFN4,PTPRF,Q6PJG9,P10586,Ligand-Receptor,Signaling by Leucine Rich Repeat And Fibronectin
+LRFN4,PTPRS,Q6PJG9,Q13332,Ligand-Receptor,Signaling by Leucine Rich Repeat And Fibronectin
+LRFN5,PTPRD,Q96NI6,P23468,Ligand-Receptor,Signaling by Leucine Rich Repeat And Fibronectin
+LRFN5,PTPRF,Q96NI6,P10586,Ligand-Receptor,Signaling by Leucine Rich Repeat And Fibronectin
+LRFN5,PTPRS,Q96NI6,Q13332,Ligand-Receptor,Signaling by Leucine Rich Repeat And Fibronectin
+LRRTM1,NRXN1,Q86UE6,Q9ULB1,Ligand-Receptor,Signaling by Leucine-Rich Repeat Transmembrane Neuronal Protein
+LRRTM1,NRXN2,Q86UE6,P58401,Ligand-Receptor,Signaling by Leucine-Rich Repeat Transmembrane Neuronal Protein
+LRRTM1,NRXN3,Q86UE6,Q9HDB5,Ligand-Receptor,Signaling by Leucine-Rich Repeat Transmembrane Neuronal Protein
+LRRTM2,NRXN1,O43300,Q9ULB1,Ligand-Receptor,Signaling by Leucine-Rich Repeat Transmembrane Neuronal Protein
+LRRTM2,NRXN2,O43300,P58401,Ligand-Receptor,Signaling by Leucine-Rich Repeat Transmembrane Neuronal Protein
+LRRTM2,NRXN3,O43300,Q9HDB5,Ligand-Receptor,Signaling by Leucine-Rich Repeat Transmembrane Neuronal Protein
+LRRTM3,NRXN1,Q86VH5,Q9ULB1,Ligand-Receptor,Signaling by Leucine-Rich Repeat Transmembrane Neuronal Protein
+LRRTM3,NRXN2,Q86VH5,P58401,Ligand-Receptor,Signaling by Leucine-Rich Repeat Transmembrane Neuronal Protein
+LRRTM3,NRXN3,Q86VH5,Q9HDB5,Ligand-Receptor,Signaling by Leucine-Rich Repeat Transmembrane Neuronal Protein
+LRRTM4,NRXN1,Q86VH4,Q9ULB1,Ligand-Receptor,Signaling by Leucine-Rich Repeat Transmembrane Neuronal Protein
+LRRTM4,NRXN2,Q86VH4,P58401,Ligand-Receptor,Signaling by Leucine-Rich Repeat Transmembrane Neuronal Protein
+LRRTM4,NRXN3,Q86VH4,Q9HDB5,Ligand-Receptor,Signaling by Leucine-Rich Repeat Transmembrane Neuronal Protein
+LRRTM4,PTPRS,Q86VH4,Q13332,Ligand-Receptor,Signaling by Leucine-Rich Repeat Transmembrane Neuronal Protein
+NCAM1,AGRN,P13591,O00468,Ligand-Receptor,Signaling by Leucine-Rich Repeat Transmembrane Neuronal Protein
+LTB,LTBR,Q06643,P36941,Ligand-Receptor,Signaling by Lipoxin/Leukotriene
+XCL1,XCR1,P47992,P46094,Ligand-Receptor,Signaling by Lymphotactin
+XCL2,XCR1,Q9UBD3,P46094,Ligand-Receptor,Signaling by Lymphotactin
+LPAR1,ADGRE5,Q92633,P48960,Receptor-Receptor,Signaling by Lysophosphatidic acid receptor
+LPAR2,ADGRE5,Q9HBW0,P48960,Receptor-Receptor,Signaling by Lysophosphatidic acid receptor
+LPAR3,ADGRE5,Q9UBY5,P48960,Receptor-Receptor,Signaling by Lysophosphatidic acid receptor
+MDK,ALK,P21741,Q9UM73,Ligand-Receptor,Signaling by Midkine
+MDK,PTPRZ1,P21741,P23471,Ligand-Receptor,Signaling by Midkine
+NECTIN2,TIGIT,Q92692,Q495A1,Ligand-Receptor,Signaling by Nectin
+NECTIN3,PVR,Q9NQS3,P15151,Ligand-Receptor,Signaling by Nectin
+NECTIN3,TIGIT,Q9NQS3,Q495A1,Ligand-Receptor,Signaling by Nectin
+NTN1,DCC,O95631,P43146,Ligand-Receptor,Signaling by Netrin
+NTN1,DSCAM,O95631,O60469,Ligand-Receptor,Signaling by Netrin
+NTN1,UNC5A,O95631,Q6ZN44,Ligand-Receptor,Signaling by Netrin
+NTN1,UNC5B,O95631,Q8IZJ1,Ligand-Receptor,Signaling by Netrin
+NTN1,UNC5C,O95631,O95185,Ligand-Receptor,Signaling by Netrin
+NTN4,NTRK2,Q9HB63,Q16620,Ligand-Receptor,Signaling by Netrin
+NTN4,UNC5B,Q9HB63,Q8IZJ1,Ligand-Receptor,Signaling by Netrin
+NTN4,UNC5D,Q9HB63,Q6UXZ4,Ligand-Receptor,Signaling by Netrin
+NRG1,ERBB3,Q02297,P21860,Ligand-Receptor,Signaling by Neuregulin
+NRG1,ERBB4,Q02297,Q15303,Ligand-Receptor,Signaling by Neuregulin
+NRG2,ERBB3,O14511,P21860,Ligand-Receptor,Signaling by Neuregulin
+NRG2,ERBB4,O14511,Q15303,Ligand-Receptor,Signaling by Neuregulin
+NRG3,ERBB4,P56975,Q15303,Ligand-Receptor,Signaling by Neuregulin
+NRG4,ERBB4,Q8WWG1,Q15303,Ligand-Receptor,Signaling by Neuregulin
+NRXN1,ADGRL1,Q9ULB1,O94910,Receptor-Receptor,Signaling by Neurexin
+NRXN1,DAG1,Q9ULB1,Q14118,Receptor-Receptor,Signaling by Neurexin
+NRXN2,ADGRL1,P58401,O94910,Receptor-Receptor,Signaling by Neurexin
+NRXN2,DAG1,P58401,Q14118,Receptor-Receptor,Signaling by Neurexin
+NRXN3,ADGRL1,Q9HDB5,O94910,Receptor-Receptor,Signaling by Neurexin
+NLGN1,NRXN1,Q8N2Q7,Q9ULB1,Ligand-Receptor,Signaling by Neuroligin
+NLGN1,NRXN2,Q8N2Q7,P58401,Ligand-Receptor,Signaling by Neuroligin
+NLGN1,NRXN3,Q8N2Q7,Q9HDB5,Ligand-Receptor,Signaling by Neuroligin
+NLGN2,NRXN1,Q8NFZ4,Q9ULB1,Ligand-Receptor,Signaling by Neuroligin
+NLGN2,NRXN2,Q8NFZ4,P58401,Ligand-Receptor,Signaling by Neuroligin
+NLGN2,NRXN3,Q8NFZ4,Q9HDB5,Ligand-Receptor,Signaling by Neuroligin
+NLGN3,NRXN1,Q9NZ94,Q9ULB1,Ligand-Receptor,Signaling by Neuroligin
+NLGN3,NRXN2,Q9NZ94,P58401,Ligand-Receptor,Signaling by Neuroligin
+NLGN3,NRXN3,Q9NZ94,Q9HDB5,Ligand-Receptor,Signaling by Neuroligin
+NLGN3,PTPRD,Q9NZ94,P23468,Ligand-Receptor,Signaling by Neuroligin
+NLGN4X,NRXN1,Q8N0W4,Q9ULB1,Ligand-Receptor,Signaling by Neuroligin
+NLGN4X,NRXN2,Q8N0W4,P58401,Ligand-Receptor,Signaling by Neuroligin
+NLGN4X,NRXN3,Q8N0W4,Q9HDB5,Ligand-Receptor,Signaling by Neuroligin
+NLGN4Y,NRXN1,Q8NFZ3,Q9ULB1,Ligand-Receptor,Signaling by Neuroligin
+NLGN4Y,NRXN2,Q8NFZ3,P58401,Ligand-Receptor,Signaling by Neuroligin
+NMB,GRPR,P08949,P30550,Ligand-Receptor,Signaling by Neuromedin
+NMB,NMBR,P08949,P28336,Ligand-Receptor,Signaling by Neuromedin
+NMS,NMUR1,Q5H8A3,Q9HB89,Ligand-Receptor,Signaling by Neuromedin
+NMS,NMUR2,Q5H8A3,Q9GZQ4,Ligand-Receptor,Signaling by Neuromedin
+NMU,NMUR1,P48645,Q9HB89,Ligand-Receptor,Signaling by Neuromedin
+NMU,NMUR2,P48645,Q9GZQ4,Ligand-Receptor,Signaling by Neuromedin
+NPB,NPBWR1,Q8NG41,P48145,Ligand-Receptor,Signaling by Neuropeptide precursor
+NPB,NPBWR2,Q8NG41,P48146,Ligand-Receptor,Signaling by Neuropeptide precursor
+NPFF,NPFFR1,O15130,Q9GZQ6,Ligand-Receptor,Signaling by Neuropeptide precursor
+NPFF,NPFFR2,O15130,Q9Y5X5,Ligand-Receptor,Signaling by Neuropeptide precursor
+NPPA,NPR1,P01160,P16066,Ligand-Receptor,Signaling by Neuropeptide precursor
+NPS,NPSR1,P0C0P6,Q6W5P4,Ligand-Receptor,Signaling by Neuropeptide precursor
+NPW,NPBWR1,Q8N729,P48145,Ligand-Receptor,Signaling by Neuropeptide precursor
+NPW,NPBWR2,Q8N729,P48146,Ligand-Receptor,Signaling by Neuropeptide precursor
+NTS,NTSR1,P30990,P30989,Ligand-Receptor,Signaling by Neurotensin
+NTS,NTSR2,P30990,O95665,Ligand-Receptor,Signaling by Neurotensin
+NTS,SORT1,P30990,Q99523,Ligand-Receptor,Signaling by Neurotensin
+NTF3,NGFR,P20783,P08138,Ligand-Receptor,Signaling by Neurotrophin
+NTF3,NTRK1,P20783,P04629,Ligand-Receptor,Signaling by Neurotrophin
+NTF3,NTRK2,P20783,Q16620,Ligand-Receptor,Signaling by Neurotrophin
+NTF3,NTRK3,P20783,Q16288,Ligand-Receptor,Signaling by Neurotrophin
+NTF4,NGFR,P34130,P08138,Ligand-Receptor,Signaling by Neurotrophin
+NTF4,NTRK2,P34130,Q16620,Ligand-Receptor,Signaling by Neurotrophin
+CNTN1,NOTCH1,Q12860,P46531,Ligand-Receptor,Signaling by Notch
+CNTN1,NOTCH2,Q12860,Q04721,Ligand-Receptor,Signaling by Notch
+DLK1,NOTCH1,P80370,P46531,Ligand-Receptor,Signaling by Notch
+DLK1,NOTCH2,P80370,Q04721,Ligand-Receptor,Signaling by Notch
+DLK1,NOTCH3,P80370,Q9UM47,Ligand-Receptor,Signaling by Notch
+DLK1,NOTCH4,P80370,Q99466,Ligand-Receptor,Signaling by Notch
+DLL1,NOTCH1,O00548,P46531,Ligand-Receptor,Signaling by Notch
+DLL1,NOTCH2,O00548,Q04721,Ligand-Receptor,Signaling by Notch
+DLL1,NOTCH3,O00548,Q9UM47,Ligand-Receptor,Signaling by Notch
+DLL1,NOTCH4,O00548,Q99466,Ligand-Receptor,Signaling by Notch
+DLL3,NOTCH1,Q9NYJ7,P46531,Ligand-Receptor,Signaling by Notch
+DLL3,NOTCH2,Q9NYJ7,Q04721,Ligand-Receptor,Signaling by Notch
+DLL3,NOTCH3,Q9NYJ7,Q9UM47,Ligand-Receptor,Signaling by Notch
+DLL3,NOTCH4,Q9NYJ7,Q99466,Ligand-Receptor,Signaling by Notch
+DLL4,NOTCH1,Q9NR61,P46531,Ligand-Receptor,Signaling by Notch
+DLL4,NOTCH2,Q9NR61,Q04721,Ligand-Receptor,Signaling by Notch
+DLL4,NOTCH3,Q9NR61,Q9UM47,Ligand-Receptor,Signaling by Notch
+DLL4,NOTCH4,Q9NR61,Q99466,Ligand-Receptor,Signaling by Notch
+JAG1,NOTCH1,P78504,P46531,Ligand-Receptor,Signaling by Notch
+JAG1,NOTCH2,P78504,Q04721,Ligand-Receptor,Signaling by Notch
+JAG1,NOTCH3,P78504,Q9UM47,Ligand-Receptor,Signaling by Notch
+JAG1,NOTCH4,P78504,Q99466,Ligand-Receptor,Signaling by Notch
+JAG2,NOTCH1,Q9Y219,P46531,Ligand-Receptor,Signaling by Notch
+JAG2,NOTCH2,Q9Y219,Q04721,Ligand-Receptor,Signaling by Notch
+JAG2,NOTCH3,Q9Y219,Q9UM47,Ligand-Receptor,Signaling by Notch
+JAG2,NOTCH4,Q9Y219,Q99466,Ligand-Receptor,Signaling by Notch
+PDYN,OPRD1,P01213,P41143,Ligand-Receptor,Signaling by Opioid
+PDYN,OPRK1,P01213,P41145,Ligand-Receptor,Signaling by Opioid
+PDYN,OPRM1,P01213,P35372,Ligand-Receptor,Signaling by Opioid
+PENK,OPRD1,P01210,P41143,Ligand-Receptor,Signaling by Opioid
+PENK,OPRK1,P01210,P41145,Ligand-Receptor,Signaling by Opioid
+PENK,OPRM1,P01210,P35372,Ligand-Receptor,Signaling by Opioid
+PNOC,OPRL1,Q13519,P41146,Ligand-Receptor,Signaling by Opioid
+HCRT,HCRTR1,O43612,O43613,Ligand-Receptor,Signaling by Orexin
+HCRT,HCRTR2,O43612,O43614,Ligand-Receptor,Signaling by Orexin
+OXT,AVPR1A,P01178,P37288,Ligand-Receptor,Signaling by Oxytocin
+OXT,AVPR1B,P01178,P47901,Ligand-Receptor,Signaling by Oxytocin
+OXT,AVPR2,P01178,P30518,Ligand-Receptor,Signaling by Oxytocin
+OXT,OXTR,P01178,P30559,Ligand-Receptor,Signaling by Oxytocin
+PTH,PTH1R,P01270,Q03431,Ligand-Receptor,Signaling by Parathyroid hormone
+PTH,PTH2R,P01270,P49190,Ligand-Receptor,Signaling by Parathyroid hormone
+PTH2,PTH1R,Q96A98,Q03431,Ligand-Receptor,Signaling by Parathyroid hormone
+PTH2,PTH2R,Q96A98,P49190,Ligand-Receptor,Signaling by Parathyroid hormone
+PTHLH,PRLHR,P12272,P49683,Ligand-Receptor,Signaling by Parathyroid hormone
+PTHLH,PTH1R,P12272,Q03431,Ligand-Receptor,Signaling by Parathyroid hormone
+PTHLH,PTH2R,P12272,P49190,Ligand-Receptor,Signaling by Parathyroid hormone
+ADCYAP1,ADCYAP1R1,P18509,P41586,Ligand-Receptor,Signaling by Pituitary adenylate
+ADCYAP1,VIPR1,P18509,P32241,Ligand-Receptor,Signaling by Pituitary adenylate
+ADCYAP1,VIPR2,P18509,P41587,Ligand-Receptor,Signaling by Pituitary adenylate
+PGF,FLT1,P49763,P17948,Ligand-Receptor,Signaling by Placenta growth factor
+PGF,NRP1,P49763,O14786,Ligand-Receptor,Signaling by Placenta growth factor
+PGF,NRP2,P49763,O60462,Ligand-Receptor,Signaling by Placenta growth factor
+PLAU,PLAUR,P00749,Q03405,Ligand-Receptor,Signaling by Plasminogen Activator
+PDGFA,PDGFRA,P04085,P16234,Ligand-Receptor,Signaling by Platelet-derived growth factor
+PDGFB,PDGFRA,P01127,P16234,Ligand-Receptor,Signaling by Platelet-derived growth factor
+PDGFB,PDGFRB,P01127,P09619,Ligand-Receptor,Signaling by Platelet-derived growth factor
+PDGFC,PDGFRA,Q9NRA1,P16234,Ligand-Receptor,Signaling by Platelet-derived growth factor
+PDGFD,PDGFRB,Q9GZP0,P09619,Ligand-Receptor,Signaling by Platelet-derived growth factor
+PTN,ALK,P21246,Q9UM73,Ligand-Receptor,Signaling by Pleiotrophin
+PTN,PTPRZ1,P21246,P23471,Ligand-Receptor,Signaling by Pleiotrophin
+PODXL,SELL,O00592,P14151,Receptor-Receptor,Signaling by Podocalyxin-like protein
+PODXL2,SELE,Q9NZ53,P16581,Ligand-Receptor,Signaling by Podocalyxin-like protein
+PODXL2,SELL,Q9NZ53,P14151,Ligand-Receptor,Signaling by Podocalyxin-like protein
+PODXL2,SELP,Q9NZ53,P16109,Ligand-Receptor,Signaling by Podocalyxin-like protein
+POMC,MC1R,P01189,Q01726,Ligand-Receptor,Signaling by Podocalyxin-like protein
+PVR,CD226,P15151,Q15762,Ligand-Receptor,Signaling by Poliovirus receptor
+PVR,CD96,P15151,P40200,Ligand-Receptor,Signaling by Poliovirus receptor
+PVR,TIGIT,P15151,Q495A1,Ligand-Receptor,Signaling by Poliovirus receptor
+GCG,GCGR,P01275,P47871,Ligand-Receptor,Signaling by Pro-glucagon precursor
+GCG,GLP1R,P01275,P43220,Ligand-Receptor,Signaling by Pro-glucagon precursor
+GCG,GLP2R,P01275,O95838,Ligand-Receptor,Signaling by Pro-glucagon precursor
+PMCH,MCHR1,P20382,Q99705,Ligand-Receptor,Signaling by Pro-MHC
+PMCH,MCHR2,P20382,Q969V1,Ligand-Receptor,Signaling by Pro-MHC
+NPY,NPY1R,P01303,P25929,Ligand-Receptor,Signaling by Pro-neuregulin
+NPY,NPY2R,P01303,P49146,Ligand-Receptor,Signaling by Pro-neuregulin
+NPY,NPY4R,P01303,P50391,Ligand-Receptor,Signaling by Pro-neuregulin
+NPY,NPY5R,P01303,Q15761,Ligand-Receptor,Signaling by Pro-neuregulin
+NPY,PRLHR,P01303,P49683,Ligand-Receptor,Signaling by Pro-neuregulin
+GNRH1,GNRHR,P01148,P30968,Ligand-Receptor,Signaling by Progonadoliberin
+GNRH1,GNRHR2,P01148,Q96P88,Ligand-Receptor,Signaling by Progonadoliberin
+GNRH2,GNRHR,O43555,P30968,Ligand-Receptor,Signaling by Progonadoliberin
+GNRH2,GNRHR2,O43555,Q96P88,Ligand-Receptor,Signaling by Progonadoliberin
+PROK1,PROKR1,P58294,Q8TCW9,Ligand-Receptor,Signaling by Prokineticin
+PROK1,PROKR2,P58294,Q8NFJ6,Ligand-Receptor,Signaling by Prokineticin
+PROK2,PROKR1,Q9HC23,Q8TCW9,Ligand-Receptor,Signaling by Prokineticin
+PROK2,PROKR2,Q9HC23,Q8NFJ6,Ligand-Receptor,Signaling by Prokineticin
+PRL,PRLR,P01236,P16471,Ligand-Receptor,Signaling by Prolactin
+PRLH,PRLHR,P81277,P49683,Ligand-Receptor,Signaling by Prolactin
+POMC,MC2R,P01189,Q01718,Ligand-Receptor,Signaling by Proopiomelanocortin
+POMC,MC3R,P01189,P41968,Ligand-Receptor,Signaling by Proopiomelanocortin
+POMC,MC4R,P01189,P32245,Ligand-Receptor,Signaling by Proopiomelanocortin
+POMC,MC5R,P01189,P33032,Ligand-Receptor,Signaling by Proopiomelanocortin
+RLN1,RXFP1,P04808,Q9HBX9,Ligand-Receptor,Signaling by Relaxin
+RLN1,RXFP2,P04808,Q8WXD0,Ligand-Receptor,Signaling by Relaxin
+RLN1,RXFP3,P04808,Q9NSD7,Ligand-Receptor,Signaling by Relaxin
+RLN2,RXFP1,P04090,Q9HBX9,Ligand-Receptor,Signaling by Relaxin
+RLN2,RXFP2,P04090,Q8WXD0,Ligand-Receptor,Signaling by Relaxin
+RLN2,RXFP3,P04090,Q9NSD7,Ligand-Receptor,Signaling by Relaxin
+RLN3,RXFP1,Q8WXF3,Q9HBX9,Ligand-Receptor,Signaling by Relaxin
+RLN3,RXFP2,Q8WXF3,Q8WXD0,Ligand-Receptor,Signaling by Relaxin
+RLN3,RXFP3,Q8WXF3,Q9NSD7,Ligand-Receptor,Signaling by Relaxin
+RLN3,RXFP4,Q8WXF3,Q8TDU9,Ligand-Receptor,Signaling by Relaxin
+PSAP,GPR37,P07602,O15354,Ligand-Receptor,Signaling by Prosaposin
+PSAP,GPR37L1,P07602,O60883,Ligand-Receptor,Signaling by Prosaposin
+PPY,NPY1R,P01298,P25929,Ligand-Receptor,Signaling by Peptide YY
+PPY,NPY2R,P01298,P49146,Ligand-Receptor,Signaling by Peptide YY
+PPY,NPY4R,P01298,P50391,Ligand-Receptor,Signaling by Peptide YY
+PPY,NPY5R,P01298,Q15761,Ligand-Receptor,Signaling by Peptide YY
+PYY,NPY1R,P10082,P25929,Ligand-Receptor,Signaling by Peptide YY
+PYY,NPY2R,P10082,P49146,Ligand-Receptor,Signaling by Peptide YY
+PYY,NPY4R,P10082,P50391,Ligand-Receptor,Signaling by Peptide YY
+PYY,NPY5R,P10082,Q15761,Ligand-Receptor,Signaling by Peptide YY
+RSPO1,LGR4,Q2MKA7,Q9BXB1,Ligand-Receptor,Signaling by R-spondin
+RSPO1,LGR5,Q2MKA7,O75473,Ligand-Receptor,Signaling by R-spondin
+RSPO1,LGR6,Q2MKA7,Q9HBX8,Ligand-Receptor,Signaling by R-spondin
+RSPO2,LGR4,Q6UXX9,Q9BXB1,Ligand-Receptor,Signaling by R-spondin
+RSPO2,LGR5,Q6UXX9,O75473,Ligand-Receptor,Signaling by R-spondin
+RSPO2,LGR6,Q6UXX9,Q9HBX8,Ligand-Receptor,Signaling by R-spondin
+RSPO3,LGR4,Q9BXY4,Q9BXB1,Ligand-Receptor,Signaling by R-spondin
+RSPO3,LGR5,Q9BXY4,O75473,Ligand-Receptor,Signaling by R-spondin
+RSPO3,LGR6,Q9BXY4,Q9HBX8,Ligand-Receptor,Signaling by R-spondin
+RSPO4,LGR4,Q2I0M5,Q9BXB1,Ligand-Receptor,Signaling by R-spondin
+RSPO4,LGR5,Q2I0M5,O75473,Ligand-Receptor,Signaling by R-spondin
+RSPO4,LGR6,Q2I0M5,Q9HBX8,Ligand-Receptor,Signaling by R-spondin
+RELN,LRP8,P78509,Q14114,Ligand-Receptor,Signaling by Reelin
+RELN,VLDLR,P78509,P98155,Ligand-Receptor,Signaling by Reelin
+RARRES2,CCRL2,Q99969,O00421,Ligand-Receptor,Signaling by Retinoid acid
+RARRES2,CMKLR1,Q99969,Q99788,Ligand-Receptor,Signaling by Retinoid acid
+RARRES2,GPR1,Q99969,P46091,Ligand-Receptor,Signaling by Retinoid acid
+SOSTDC1,LRP5,Q6X4U4,O75197,Ligand-Receptor,Signaling by Sclerostin domain-containing protein
+SOSTDC1,LRP6,Q6X4U4,O75581,Ligand-Receptor,Signaling by Sclerostin domain-containing protein
+SCT,SCTR,P09683,P47872,Ligand-Receptor,Signaling by Secretin
+SCT,VIPR1,P09683,P32241,Ligand-Receptor,Signaling by Secretin
+SCT,VIPR2,P09683,P41587,Ligand-Receptor,Signaling by Secretin
+SELE,GLG1,P16581,Q92896,Ligand-Receptor,Signaling by Selectin
+SELPLG,SELE,Q14242,P16581,Ligand-Receptor,Signaling by Selectin
+SELPLG,SELL,Q14242,P14151,Ligand-Receptor,Signaling by Selectin
+SELPLG,SELP,Q14242,P16109,Ligand-Receptor,Signaling by Selectin
+SEMA3A,NRP1,Q14563,O14786,Ligand-Receptor,Signaling by Semaphorin
+SEMA3C,NRP2,Q99985,O60462,Ligand-Receptor,Signaling by Semaphorin
+SEMA3E,PLXND1,O15041,Q9Y4D7,Ligand-Receptor,Signaling by Semaphorin
+SEMA3F,NRP2,Q13275,O60462,Ligand-Receptor,Signaling by Semaphorin
+SEMA4A,PLXND1,Q9H3S1,Q9Y4D7,Ligand-Receptor,Signaling by Semaphorin
+SEMA4C,PLXNB2,Q9C0C4,O15031,Ligand-Receptor,Signaling by Semaphorin
+SEMA4D,CD72,Q92854,P21854,Ligand-Receptor,Signaling by Semaphorin
+SEMA4D,PLXNB1,Q92854,O43157,Ligand-Receptor,Signaling by Semaphorin
+SEMA4D,PLXNB2,Q92854,O15031,Ligand-Receptor,Signaling by Semaphorin
+SEMA4D,PTPRC,Q92854,P08575,Ligand-Receptor,Signaling by Semaphorin
+SEMA4G,PLXNB2,Q9NTN9,O15031,Ligand-Receptor,Signaling by Semaphorin
+SEMA5A,PLXNB3,Q13591,Q9ULL4,Ligand-Receptor,Signaling by Semaphorin
+SEMA7A,PLXNC1,O75326,O60486,Ligand-Receptor,Signaling by Semaphorin
+SLITRK1,PTPRD,Q96PX8,P23468,Ligand-Receptor,Signaling by SLIT and NTRK-like protein
+SLITRK1,PTPRS,Q96PX8,Q13332,Ligand-Receptor,Signaling by SLIT and NTRK-like protein
+SLITRK2,PTPRD,Q9H156,P23468,Ligand-Receptor,Signaling by SLIT and NTRK-like protein
+SLITRK2,PTPRS,Q9H156,Q13332,Ligand-Receptor,Signaling by SLIT and NTRK-like protein
+SLITRK3,PTPRD,O94933,P23468,Ligand-Receptor,Signaling by SLIT and NTRK-like protein
+SLITRK4,OLR1,Q8IW52,P78380,Ligand-Receptor,Signaling by SLIT and NTRK-like protein
+SLITRK4,PTPRS,Q8IW52,Q13332,Ligand-Receptor,Signaling by SLIT and NTRK-like protein
+SLITRK5,PTPRS,O94991,Q13332,Ligand-Receptor,Signaling by SLIT and NTRK-like protein
+SLITRK6,PTPRS,Q9H5Y7,Q13332,Ligand-Receptor,Signaling by SLIT and NTRK-like protein
+SLIT1,ROBO1,O75093,Q9Y6N7,Ligand-Receptor,Signaling by SLIT and NTRK-like protein
+SLIT2,ROBO1,O94813,Q9Y6N7,Ligand-Receptor,Signaling by SLIT and NTRK-like protein
+SLIT2,ROBO2,O94813,Q9HCK4,Ligand-Receptor,Signaling by SLIT and NTRK-like protein
+CORT,SSTR1,O00230,P30872,Ligand-Receptor,Signaling by Somatostatin
+CORT,SSTR2,O00230,P30874,Ligand-Receptor,Signaling by Somatostatin
+CORT,SSTR3,O00230,P32745,Ligand-Receptor,Signaling by Somatostatin
+CORT,SSTR4,O00230,P31391,Ligand-Receptor,Signaling by Somatostatin
+CORT,SSTR5,O00230,P35346,Ligand-Receptor,Signaling by Somatostatin
+GH1,GHR,P01241,P10912,Ligand-Receptor,Signaling by Somatostatin
+GH2,GHR,P01242,P10912,Ligand-Receptor,Signaling by Somatostatin
+SST,SSTR1,P61278,P30872,Ligand-Receptor,Signaling by Somatostatin
+SST,SSTR2,P61278,P30874,Ligand-Receptor,Signaling by Somatostatin
+SST,SSTR3,P61278,P32745,Ligand-Receptor,Signaling by Somatostatin
+SST,SSTR4,P61278,P31391,Ligand-Receptor,Signaling by Somatostatin
+SST,SSTR5,P61278,P35346,Ligand-Receptor,Signaling by Somatostatin
+SHH,HHIP,Q15465,Q96QV1,Ligand-Ligand,Signaling by Sonic hedgehog
+SDC1,ADGRA2,P18827,Q96PE1,Ligand-Receptor,Signaling by Syndecan
+SDC2,ADGRA2,P34741,Q96PE1,Ligand-Receptor,Signaling by Syndecan
+TAC1,TACR1,P20366,P25103,Ligand-Receptor,Signaling by Tachykinins
+TAC1,TACR2,P20366,P21452,Ligand-Receptor,Signaling by Tachykinins
+TAC1,TACR3,P20366,P29371,Ligand-Receptor,Signaling by Tachykinins
+TAC3,TACR1,Q9UHF0,P25103,Ligand-Receptor,Signaling by Tachykinins
+TAC3,TACR2,Q9UHF0,P21452,Ligand-Receptor,Signaling by Tachykinins
+TAC3,TACR3,Q9UHF0,P29371,Ligand-Receptor,Signaling by Tachykinins
+TAFA1,GPR1,Q7Z5A9,P46091,Ligand-Receptor,Signaling by TAFA
+TAFA4,FPR1,Q96LR4,P21462,Ligand-Receptor,Signaling by TAFA
+TAFA5,FPR2,Q7Z5A7,P25090,Ligand-Receptor,Signaling by TAFA
+TAFA5,S1PR2,Q7Z5A7,O95136,Ligand-Receptor,Signaling by TAFA
+TENM1,ADGRL1,Q9UKZ4,O94910,Ligand-Receptor,Signaling by Teneurin
+TENM1,ADGRL2,Q9UKZ4,O95490,Ligand-Receptor,Signaling by Teneurin
+TENM1,ADGRL3,Q9UKZ4,Q9HAR2,Ligand-Receptor,Signaling by Teneurin
+TENM2,ADGRL1,Q9NT68,O94910,Ligand-Receptor,Signaling by Teneurin
+TENM2,ADGRL2,Q9NT68,O95490,Ligand-Receptor,Signaling by Teneurin
+TENM2,ADGRL3,Q9NT68,Q9HAR2,Ligand-Receptor,Signaling by Teneurin
+TENM3,ADGRL1,Q9P273,O94910,Ligand-Receptor,Signaling by Teneurin
+TENM3,ADGRL2,Q9P273,O95490,Ligand-Receptor,Signaling by Teneurin
+TENM3,ADGRL3,Q9P273,Q9HAR2,Ligand-Receptor,Signaling by Teneurin
+TENM4,ADGRL1,Q6N022,O94910,Ligand-Receptor,Signaling by Teneurin
+TENM4,ADGRL2,Q6N022,O95490,Ligand-Receptor,Signaling by Teneurin
+TENM4,ADGRL3,Q6N022,Q9HAR2,Ligand-Receptor,Signaling by Teneurin
+THBS1,CD36,P07996,P16671,Ligand-Receptor,Signaling by Thrombospondin precursor
+THBS2,CD36,P35442,P16671,Ligand-Receptor,Signaling by Thrombospondin precursor
+TAX1BP3,ADGRB1,O14907,O14514,Ligand-Receptor,Signaling by Thromboxane
+TAX1BP3,ADGRB2,O14907,O60241,Ligand-Receptor,Signaling by Thromboxane
+THY1,ADGRE2,P04216,Q9UHX3,Adhesion-Adhesion,Adhesion by antigen THY1
+THY1,ADGRE5,P04216,P48960,Adhesion-Adhesion,Adhesion by antigen THY1
+TF,TFR2,P02787,Q9UP52,Ligand-Receptor,Signaling by Transferrin
+TF,TFRC,P02787,P02786,Ligand-Receptor,Signaling by Transferrin
+TGFA,EGFR,P01135,P00533,Ligand-Receptor,Signaling by Transforming growth factor
+TGFB1,TGFBR3,P01137,Q03167,Ligand-Receptor,Signaling by Transforming growth factor
+TGFB2,TGFBR3,P61812,Q03167,Ligand-Receptor,Signaling by Transforming growth factor
+TGFB3,TGFBR3,P10600,Q03167,Ligand-Receptor,Signaling by Transforming growth factor
+BTLA,TNFRSF14,Q7Z6A9,Q92956,Ligand-Receptor,Signaling by Tumor necrosis factor
+CD160,TNFRSF14,O95971,Q92956,Adhesion-Adhesion,Signaling by Tumor necrosis factor
+FASLG,FAS,P48023,P25445,Ligand-Receptor,Signaling by Tumor necrosis factor
+FASLG,TNFRSF6B,P48023,O95407,Ligand-Receptor,Signaling by Tumor necrosis factor
+LTA,TNFRSF14,P01374,Q92956,Ligand-Receptor,Signaling by Tumor necrosis factor
+LTA,TNFRSF1A,P01374,P19438,Ligand-Receptor,Signaling by Tumor necrosis factor
+LTA,TNFRSF1B,P01374,P20333,Ligand-Receptor,Signaling by Tumor necrosis factor
+TNF,TNFRSF1A,P01375,P19438,Ligand-Receptor,Signaling by Tumor necrosis factor
+TNF,TNFRSF1B,P01375,P20333,Ligand-Receptor,Signaling by Tumor necrosis factor
+TNFSF10,TNFRSF10A,P50591,O00220,Ligand-Receptor,Signaling by Tumor necrosis factor
+TNFSF10,TNFRSF10B,P50591,O14763,Ligand-Receptor,Signaling by Tumor necrosis factor
+TNFSF10,TNFRSF10C,P50591,O14798,Ligand-Receptor,Signaling by Tumor necrosis factor
+TNFSF10,TNFRSF10D,P50591,Q9UBN6,Ligand-Receptor,Signaling by Tumor necrosis factor
+TNFSF10,TNFRSF11B,P50591,O00300,Ligand-Receptor,Signaling by Tumor necrosis factor
+TNFSF11,TNFRSF11A,O14788,Q9Y6Q6,Ligand-Receptor,Signaling by Tumor necrosis factor
+TNFSF11,TNFRSF11B,O14788,O00300,Ligand-Receptor,Signaling by Tumor necrosis factor
+TNFSF12,TNFRSF12A,O43508,Q9NP84,Ligand-Receptor,Signaling by Tumor necrosis factor
+TNFSF12,TNFRSF25,O43508,Q93038,Ligand-Receptor,Signaling by Tumor necrosis factor
+TNFSF13,TNFRSF13B,O75888,O14836,Ligand-Receptor,Signaling by Tumor necrosis factor
+TNFSF13,TNFRSF17,O75888,Q02223,Ligand-Receptor,Signaling by Tumor necrosis factor
+TNFSF13B,TNFRSF13B,Q9Y275,O14836,Ligand-Receptor,Signaling by Tumor necrosis factor
+TNFSF13B,TNFRSF13C,Q9Y275,Q96RJ3,Ligand-Receptor,Signaling by Tumor necrosis factor
+TNFSF13B,TNFRSF17,Q9Y275,Q02223,Ligand-Receptor,Signaling by Tumor necrosis factor
+TNFSF14,LTBR,O43557,P36941,Ligand-Receptor,Signaling by Tumor necrosis factor
+TNFSF14,TNFRSF14,O43557,Q92956,Ligand-Receptor,Signaling by Tumor necrosis factor
+TNFSF14,TNFRSF6B,O43557,O95407,Ligand-Receptor,Signaling by Tumor necrosis factor
+TNFSF15,TNFRSF25,O95150,Q93038,Ligand-Receptor,Signaling by Tumor necrosis factor
+TNFSF15,TNFRSF6B,O95150,O95407,Ligand-Receptor,Signaling by Tumor necrosis factor
+TNFSF18,TNFRSF18,Q9UNG2,Q9Y5U5,Ligand-Receptor,Signaling by Tumor necrosis factor
+TNFSF4,TNFRSF4,P23510,P43489,Ligand-Receptor,Signaling by Tumor necrosis factor
+TNFSF8,TNFRSF8,P32971,P28908,Ligand-Receptor,Signaling by Tumor necrosis factor
+TNFSF9,TNFRSF9,P41273,Q07011,Ligand-Receptor,Signaling by Tumor necrosis factor
+UCN,CRHR1,P55089,P34998,Ligand-Receptor,Signaling by Urocortin/Urotensin
+UCN,CRHR2,P55089,Q13324,Ligand-Receptor,Signaling by Urocortin/Urotensin
+UCN2,CRHR1,Q96RP3,P34998,Ligand-Receptor,Signaling by Urocortin/Urotensin
+UCN2,CRHR2,Q96RP3,Q13324,Ligand-Receptor,Signaling by Urocortin/Urotensin
+UCN3,CRHR2,Q969E3,Q13324,Ligand-Receptor,Signaling by Urocortin/Urotensin
+UTS2,UTS2R,O95399,Q9UKP6,Ligand-Receptor,Signaling by Urocortin/Urotensin
+UTS2B,UTS2R,Q765I0,Q9UKP6,Ligand-Receptor,Signaling by Urocortin/Urotensin
+VEGFA,FLT1,P15692,P17948,Ligand-Receptor,Signaling by Vascular endothelial growth factor
+VEGFA,KDR,P15692,P35968,Ligand-Receptor,Signaling by Vascular endothelial growth factor
+VEGFA,NRP1,P15692,O14786,Ligand-Receptor,Signaling by Vascular endothelial growth factor
+VEGFA,NRP2,P15692,O60462,Ligand-Receptor,Signaling by Vascular endothelial growth factor
+VEGFB,FLT1,P49765,P17948,Ligand-Receptor,Signaling by Vascular endothelial growth factor
+VEGFB,NRP1,P49765,O14786,Ligand-Receptor,Signaling by Vascular endothelial growth factor
+VEGFC,FLT4,P49767,P35916,Ligand-Receptor,Signaling by Vascular endothelial growth factor
+VEGFC,KDR,P49767,P35968,Ligand-Receptor,Signaling by Vascular endothelial growth factor
+VEGFD,FLT4,O43915,P35916,Ligand-Receptor,Signaling by Vascular endothelial growth factor
+VEGFD,KDR,O43915,P35968,Ligand-Receptor,Signaling by Vascular endothelial growth factor
+VIP,ADCYAP1R1,P01282,P41586,Ligand-Receptor,Signaling by Vasoactive Intestinal Peptide
+VIP,SCTR,P01282,P47872,Ligand-Receptor,Signaling by Vasoactive Intestinal Peptide
+VIP,VIPR1,P01282,P32241,Ligand-Receptor,Signaling by Vasoactive Intestinal Peptide
+VIP,VIPR2,P01282,P41587,Ligand-Receptor,Signaling by Vasoactive Intestinal Peptide
+AVP,AVPR1A,P01185,P37288,Ligand-Receptor,Signaling by Vasopressin
+AVP,AVPR1B,P01185,P47901,Ligand-Receptor,Signaling by Vasopressin
+AVP,AVPR2,P01185,P30518,Ligand-Receptor,Signaling by Vasopressin
+AVP,OXTR,P01185,P30559,Ligand-Receptor,Signaling by Vasopressin
+DKK1,LRP5,O94907,O75197,Ligand-Receptor,Signaling by WNT
+DKK1,LRP6,O94907,O75581,Ligand-Receptor,Signaling by WNT
+DKK2,LRP6,Q9UBU2,O75581,Ligand-Receptor,Signaling by WNT
+WNT1,CER1,P04628,O95813,Ligand-Ligand,Signaling by WNT inhibition
+WNT1,FRZB,P04628,Q92765,Ligand-Ligand,Signaling by WNT inhibition
+WNT1,SFRP1,P04628,Q8N474,Ligand-Ligand,Signaling by WNT inhibition
+WNT1,SFRP2,P04628,Q96HF1,Ligand-Ligand,Signaling by WNT inhibition
+WNT1,SFRP4,P04628,Q6FHJ7,Ligand-Ligand,Signaling by WNT inhibition
+WNT1,SFRP5,P04628,Q5T4F7,Ligand-Ligand,Signaling by WNT inhibition
+WNT1,WIF1,P04628,Q9Y5W5,Ligand-Ligand,Signaling by WNT inhibition
+WNT10A,FRZB,Q9GZT5,Q92765,Ligand-Ligand,Signaling by WNT inhibition
+WNT11,CER1,O96014,O95813,Ligand-Ligand,Signaling by WNT inhibition
+WNT11,FRZB,O96014,Q92765,Ligand-Ligand,Signaling by WNT inhibition
+WNT11,SFRP1,O96014,Q8N474,Ligand-Ligand,Signaling by WNT inhibition
+WNT11,SFRP2,O96014,Q96HF1,Ligand-Ligand,Signaling by WNT inhibition
+WNT11,SFRP4,O96014,Q6FHJ7,Ligand-Ligand,Signaling by WNT inhibition
+WNT11,SFRP5,O96014,Q5T4F7,Ligand-Ligand,Signaling by WNT inhibition
+WNT11,WIF1,O96014,Q9Y5W5,Ligand-Ligand,Signaling by WNT inhibition
+WNT16,CER1,Q9UBV4,O95813,Ligand-Ligand,Signaling by WNT inhibition
+WNT16,FRZB,Q9UBV4,Q92765,Ligand-Ligand,Signaling by WNT inhibition
+WNT16,SFRP1,Q9UBV4,Q8N474,Ligand-Ligand,Signaling by WNT inhibition
+WNT16,SFRP2,Q9UBV4,Q96HF1,Ligand-Ligand,Signaling by WNT inhibition
+WNT16,SFRP4,Q9UBV4,Q6FHJ7,Ligand-Ligand,Signaling by WNT inhibition
+WNT16,SFRP5,Q9UBV4,Q5T4F7,Ligand-Ligand,Signaling by WNT inhibition
+WNT16,WIF1,Q9UBV4,Q9Y5W5,Ligand-Ligand,Signaling by WNT inhibition
+WNT2,CER1,P09544,O95813,Ligand-Ligand,Signaling by WNT inhibition
+WNT2,FRZB,P09544,Q92765,Ligand-Ligand,Signaling by WNT inhibition
+WNT2,SFRP1,P09544,Q8N474,Ligand-Ligand,Signaling by WNT inhibition
+WNT2,SFRP2,P09544,Q96HF1,Ligand-Ligand,Signaling by WNT inhibition
+WNT2,SFRP4,P09544,Q6FHJ7,Ligand-Ligand,Signaling by WNT inhibition
+WNT2,SFRP5,P09544,Q5T4F7,Ligand-Ligand,Signaling by WNT inhibition
+WNT2,WIF1,P09544,Q9Y5W5,Ligand-Ligand,Signaling by WNT inhibition
+WNT2B,CER1,Q93097,O95813,Ligand-Ligand,Signaling by WNT inhibition
+WNT2B,FRZB,Q93097,Q92765,Ligand-Ligand,Signaling by WNT inhibition
+WNT2B,SFRP1,Q93097,Q8N474,Ligand-Ligand,Signaling by WNT inhibition
+WNT2B,SFRP2,Q93097,Q96HF1,Ligand-Ligand,Signaling by WNT inhibition
+WNT2B,SFRP4,Q93097,Q6FHJ7,Ligand-Ligand,Signaling by WNT inhibition
+WNT2B,SFRP5,Q93097,Q5T4F7,Ligand-Ligand,Signaling by WNT inhibition
+WNT2B,WIF1,Q93097,Q9Y5W5,Ligand-Ligand,Signaling by WNT inhibition
+WNT3,CER1,P56703,O95813,Ligand-Ligand,Signaling by WNT inhibition
+WNT3,FRZB,P56703,Q92765,Ligand-Ligand,Signaling by WNT inhibition
+WNT3,SFRP1,P56703,Q8N474,Ligand-Ligand,Signaling by WNT inhibition
+WNT3,SFRP2,P56703,Q96HF1,Ligand-Ligand,Signaling by WNT inhibition
+WNT3,SFRP4,P56703,Q6FHJ7,Ligand-Ligand,Signaling by WNT inhibition
+WNT3,SFRP5,P56703,Q5T4F7,Ligand-Ligand,Signaling by WNT inhibition
+WNT3,WIF1,P56703,Q9Y5W5,Ligand-Ligand,Signaling by WNT inhibition
+WNT3A,CER1,P56704,O95813,Ligand-Ligand,Signaling by WNT inhibition
+WNT3A,FRZB,P56704,Q92765,Ligand-Ligand,Signaling by WNT inhibition
+WNT3A,SFRP1,P56704,Q8N474,Ligand-Ligand,Signaling by WNT inhibition
+WNT3A,SFRP2,P56704,Q96HF1,Ligand-Ligand,Signaling by WNT inhibition
+WNT3A,SFRP4,P56704,Q6FHJ7,Ligand-Ligand,Signaling by WNT inhibition
+WNT3A,SFRP5,P56704,Q5T4F7,Ligand-Ligand,Signaling by WNT inhibition
+WNT3A,WIF1,P56704,Q9Y5W5,Ligand-Ligand,Signaling by WNT inhibition
+WNT4,CER1,P56705,O95813,Ligand-Ligand,Signaling by WNT inhibition
+WNT4,FRZB,P56705,Q92765,Ligand-Ligand,Signaling by WNT inhibition
+WNT4,SFRP1,P56705,Q8N474,Ligand-Ligand,Signaling by WNT inhibition
+WNT4,SFRP2,P56705,Q96HF1,Ligand-Ligand,Signaling by WNT inhibition
+WNT4,SFRP4,P56705,Q6FHJ7,Ligand-Ligand,Signaling by WNT inhibition
+WNT4,SFRP5,P56705,Q5T4F7,Ligand-Ligand,Signaling by WNT inhibition
+WNT4,WIF1,P56705,Q9Y5W5,Ligand-Ligand,Signaling by WNT inhibition
+WNT5A,CER1,P41221,O95813,Ligand-Ligand,Signaling by WNT inhibition
+WNT5A,FRZB,P41221,Q92765,Ligand-Ligand,Signaling by WNT inhibition
+WNT5A,ROR1,P41221,Q01973,Ligand-Receptor,Signaling by WNT
+WNT5A,ROR2,P41221,Q01974,Ligand-Receptor,Signaling by WNT
+WNT5A,SFRP1,P41221,Q8N474,Ligand-Ligand,Signaling by WNT inhibition
+WNT5A,SFRP2,P41221,Q96HF1,Ligand-Ligand,Signaling by WNT inhibition
+WNT5A,SFRP4,P41221,Q6FHJ7,Ligand-Ligand,Signaling by WNT inhibition
+WNT5A,SFRP5,P41221,Q5T4F7,Ligand-Ligand,Signaling by WNT inhibition
+WNT5A,WIF1,P41221,Q9Y5W5,Ligand-Ligand,Signaling by WNT inhibition
+WNT5B,CER1,Q9H1J7,O95813,Ligand-Ligand,Signaling by WNT inhibition
+WNT5B,FRZB,Q9H1J7,Q92765,Ligand-Ligand,Signaling by WNT inhibition
+WNT5B,SFRP1,Q9H1J7,Q8N474,Ligand-Ligand,Signaling by WNT inhibition
+WNT5B,SFRP2,Q9H1J7,Q96HF1,Ligand-Ligand,Signaling by WNT inhibition
+WNT5B,SFRP4,Q9H1J7,Q6FHJ7,Ligand-Ligand,Signaling by WNT inhibition
+WNT5B,SFRP5,Q9H1J7,Q5T4F7,Ligand-Ligand,Signaling by WNT inhibition
+WNT5B,WIF1,Q9H1J7,Q9Y5W5,Ligand-Ligand,Signaling by WNT inhibition
+WNT6,CER1,Q9Y6F9,O95813,Ligand-Ligand,Signaling by WNT inhibition
+WNT6,FRZB,Q9Y6F9,Q92765,Ligand-Ligand,Signaling by WNT inhibition
+WNT6,SFRP1,Q9Y6F9,Q8N474,Ligand-Ligand,Signaling by WNT inhibition
+WNT6,SFRP2,Q9Y6F9,Q96HF1,Ligand-Ligand,Signaling by WNT inhibition
+WNT6,SFRP4,Q9Y6F9,Q6FHJ7,Ligand-Ligand,Signaling by WNT inhibition
+WNT6,SFRP5,Q9Y6F9,Q5T4F7,Ligand-Ligand,Signaling by WNT inhibition
+WNT6,WIF1,Q9Y6F9,Q9Y5W5,Ligand-Ligand,Signaling by WNT inhibition
+WNT7A,CER1,O00755,O95813,Ligand-Ligand,Signaling by WNT inhibition
+WNT7A,FRZB,O00755,Q92765,Ligand-Ligand,Signaling by WNT inhibition
+WNT7A,SFRP1,O00755,Q8N474,Ligand-Ligand,Signaling by WNT inhibition
+WNT7A,SFRP2,O00755,Q96HF1,Ligand-Ligand,Signaling by WNT inhibition
+WNT7A,SFRP4,O00755,Q6FHJ7,Ligand-Ligand,Signaling by WNT inhibition
+WNT7A,SFRP5,O00755,Q5T4F7,Ligand-Ligand,Signaling by WNT inhibition
+WNT7A,WIF1,O00755,Q9Y5W5,Ligand-Ligand,Signaling by WNT inhibition
+WNT7B,CER1,P56706,O95813,Ligand-Ligand,Signaling by WNT inhibition
+WNT7B,FRZB,P56706,Q92765,Ligand-Ligand,Signaling by WNT inhibition
+WNT7B,SFRP1,P56706,Q8N474,Ligand-Ligand,Signaling by WNT inhibition
+WNT7B,SFRP2,P56706,Q96HF1,Ligand-Ligand,Signaling by WNT inhibition
+WNT7B,SFRP4,P56706,Q6FHJ7,Ligand-Ligand,Signaling by WNT inhibition
+WNT7B,SFRP5,P56706,Q5T4F7,Ligand-Ligand,Signaling by WNT inhibition
+WNT7B,WIF1,P56706,Q9Y5W5,Ligand-Ligand,Signaling by WNT inhibition
+WNT8A,CER1,Q9H1J5,O95813,Ligand-Ligand,Signaling by WNT inhibition
+WNT8A,FRZB,Q9H1J5,Q92765,Ligand-Ligand,Signaling by WNT inhibition
+WNT8A,SFRP1,Q9H1J5,Q8N474,Ligand-Ligand,Signaling by WNT inhibition
+WNT8A,SFRP2,Q9H1J5,Q96HF1,Ligand-Ligand,Signaling by WNT inhibition
+WNT8A,SFRP4,Q9H1J5,Q6FHJ7,Ligand-Ligand,Signaling by WNT inhibition
+WNT8A,SFRP5,Q9H1J5,Q5T4F7,Ligand-Ligand,Signaling by WNT inhibition
+WNT8A,WIF1,Q9H1J5,Q9Y5W5,Ligand-Ligand,Signaling by WNT inhibition
+WNT8B,CER1,Q93098,O95813,Ligand-Ligand,Signaling by WNT inhibition
+WNT8B,FRZB,Q93098,Q92765,Ligand-Ligand,Signaling by WNT inhibition
+WNT8B,SFRP1,Q93098,Q8N474,Ligand-Ligand,Signaling by WNT inhibition
+WNT8B,SFRP2,Q93098,Q96HF1,Ligand-Ligand,Signaling by WNT inhibition
+WNT8B,SFRP4,Q93098,Q6FHJ7,Ligand-Ligand,Signaling by WNT inhibition
+WNT8B,SFRP5,Q93098,Q5T4F7,Ligand-Ligand,Signaling by WNT inhibition
+WNT8B,WIF1,Q93098,Q9Y5W5,Ligand-Ligand,Signaling by WNT inhibition
+WNT9A,CER1,O14904,O95813,Ligand-Ligand,Signaling by WNT inhibition
+WNT9A,FRZB,O14904,Q92765,Ligand-Ligand,Signaling by WNT inhibition
+WNT9A,SFRP1,O14904,Q8N474,Ligand-Ligand,Signaling by WNT inhibition
+WNT9A,SFRP2,O14904,Q96HF1,Ligand-Ligand,Signaling by WNT inhibition
+WNT9A,SFRP4,O14904,Q6FHJ7,Ligand-Ligand,Signaling by WNT inhibition
+WNT9A,SFRP5,O14904,Q5T4F7,Ligand-Ligand,Signaling by WNT inhibition
+WNT9A,WIF1,O14904,Q9Y5W5,Ligand-Ligand,Signaling by WNT inhibition
+WNT9B,CER1,O14905,O95813,Ligand-Ligand,Signaling by WNT inhibition
+WNT9B,FRZB,O14905,Q92765,Ligand-Ligand,Signaling by WNT inhibition
+WNT9B,SFRP1,O14905,Q8N474,Ligand-Ligand,Signaling by WNT inhibition
+WNT9B,SFRP2,O14905,Q96HF1,Ligand-Ligand,Signaling by WNT inhibition
+WNT9B,SFRP4,O14905,Q6FHJ7,Ligand-Ligand,Signaling by WNT inhibition
+WNT9B,SFRP5,O14905,Q5T4F7,Ligand-Ligand,Signaling by WNT inhibition
+WNT9B,WIF1,O14905,Q9Y5W5,Ligand-Ligand,Signaling by WNT inhibition
+INHBC,ACVR2A,P55103,P27037,Ligand-Receptor,Signaling by Inhibin/Activin
+INHBC,ACVR2B,P55103,Q13705,Ligand-Receptor,Signaling by Inhibin/Activin
+INHBE,ACVR2A,P58166,P27037,Ligand-Receptor,Signaling by Inhibin/Activin
+INHBE,ACVR2B,P58166,Q13705,Ligand-Receptor,Signaling by Inhibin/Activin
+ALCAM,CD6,Q13740,P30203,Ligand-Receptor,
+BAG6,NCR3,P46379,O14931,Ligand-Receptor,
+BST2,LILRA4,Q10589,P59901,Ligand-Receptor,
+CD1D,LILRB2,P15813,Q8N423,Ligand-Receptor,
+CD200,CD200R1,P41217,Q8TD46,Ligand-Receptor,
+CD226,NECTIN2,Q15762,Q92692,Adhesion-Adhesion,
+CD24,SELP,P25063,P16109,Ligand-Receptor,
+CD248,IL6R,Q9HCU0,P08887,Ligand-Receptor,
+CD274,CD80,Q9NZQ7,P33681,Ligand-Receptor,
+CD274,PDCD1,Q9NZQ7,Q15116,Ligand-Receptor,
+CD276,TREML2,Q5ZPR3,Q5T2D2,Ligand-Receptor,
+CD320,JAML,Q9NPF0,Q86YT9,Ligand-Receptor,
+CD34,SELL,P28906,P14151,Ligand-Receptor,
+CD34,SELP,P28906,P16109,Ligand-Receptor,
+CD40LG,CD40,P29965,P25942,Ligand-Receptor,
+CD44,SELE,P16070,P16581,Ligand-Receptor,
+CD48,CD244,P09326,Q9BZW8,Ligand-Receptor,
+CD52,SIGLEC10,P31358,Q96LC7,Ligand-Receptor,
+CD55,ADGRE5,P08174,P48960,Ligand-Receptor,
+CD58,CD2,P19256,P06729,Ligand-Receptor,
+CD70,CD27,P32970,P26842,Ligand-Receptor,
+CD80,CD28,P33681,P10747,Ligand-Receptor,
+CD80,CTLA4,P33681,P16410,Ligand-Receptor,
+CD80,NGFR,P33681,P08138,Ligand-Receptor,
+CD86,CD28,P42081,P10747,Ligand-Receptor,
+CD86,CTLA4,P42081,P16410,Ligand-Receptor,
+CD93,IFNGR1,Q9NPY3,P15260,Ligand-Receptor,
+CD96,NECTIN1,P40200,Q15223,Receptor-Receptor,
+CD99,PILRA,P14209,Q9UKJ1,Ligand-Receptor,
+CHL1,CHL1,O00533,O00533,Adhesion-Adhesion,
+CHL1,L1CAM,O00533,P32004,Adhesion-Adhesion,
+CNTN1,MCAM,Q12860,P43121,Adhesion-Adhesion,
+CNTN1,NRCAM,Q12860,Q92823,Adhesion-Adhesion,
+CRTAM,CADM1,O95727,Q9BY67,Adhesion-Adhesion,
+EPO,EPOR,P01588,P19235,Ligand-Receptor,
+ERVH48-1,SLC1A5,M5A8F1,Q15758,Ligand-Receptor,
+ESAM,ESAM,Q96AP7,Q96AP7,Adhesion-Adhesion,
+FGFR4,TGFBR3,P22455,Q03167,Receptor-Receptor,
+FLT3LG,FLT3,P49771,P36888,Ligand-Receptor,
+FSHB,FSHR,P01225,P23945,Ligand-Receptor,
+FTH1,SCARA5,P02794,Q6ZMJ2,Ligand-Receptor,
+FTL,SCARA5,P02792,Q6ZMJ2,Ligand-Receptor,
+HEBP1,FPR3,Q9NRV9,P25089,Ligand-Receptor,
+HFE,TFRC,Q30201,P02786,Ligand-Receptor,
+HGF,MET,P14210,P08581,Ligand-Receptor,
+ICOSLG,ICOS,O75144,Q9Y6W8,Ligand-Receptor,
+JAG1,CD46,P78504,P15529,Ligand-Receptor,
+JAG1,VASN,P78504,Q6EMK4,Ligand-Receptor,
+JAG2,VASN,Q9Y219,Q6EMK4,Ligand-Receptor,
+KISS1,KISS1R,Q15726,Q969F8,Ligand-Receptor,
+KITLG,KIT,P21583,P10721,Ligand-Receptor,
+KLRB1,CLEC2D,Q12918,Q9UHP7,Ligand-Receptor,
+LAIR1,LILRB4,Q6GTX8,Q8NHJ6,Receptor-Receptor,
+LAMA2,ADGRG6,P24043,Q86SQ4,Ligand-Receptor,
+LCN2,SLC22A17,P80188,Q8WUG5,Ligand-Receptor,
+LEP,LEPR,P41159,P48357,Ligand-Receptor,
+LHB,LHCGR,P01229,P22888,Ligand-Receptor,
+LRPAP1,SORT1,P30533,Q99523,Ligand-Receptor,
+MLN,MLNR,P12872,O43193,Ligand-Receptor,
+MPZL1,MPZL1,O95297,O95297,Adhesion-Adhesion,
+MST1,MST1R,P26927,Q04912,Ligand-Receptor,
+NCR3LG1,NCR3,Q68D85,O14931,Ligand-Receptor,
+NELL2,ROBO3,Q99435,Q96MS0,Ligand-Receptor,
+NSMF,GNRHR,Q6X4W1,P30968,Ligand-Receptor,
+PDCD1LG2,PDCD1,Q9BQ51,Q15116,Ligand-Receptor,
+PECAM1,CD38,P16284,P28907,Receptor-Receptor,
+PENK,GHSR,P01210,Q92847,Ligand-Receptor,
+PF4,CXCR3,P02776,P49682,Ligand-Receptor,
+PI16,TNFRSF21,Q6UXB8,O75509,Ligand-Receptor,
+PPIA,BSG,P62937,P35613,Ligand-Receptor,
+PRNP,ADGRG6,F7VJQ1,Q86SQ4,Ligand-Receptor,
+PROC,PROCR,P04070,Q9UNN8,Ligand-Receptor,
+PTPRC,CD22,P08575,P20273,Receptor-Receptor,
+PTPRC,MRC1,P08575,P22897,Receptor-Receptor,
+PTPRD,IL1RAP,P23468,Q9NPH3,Ligand-Receptor,
+PTPRD,IL1RAPL1,P23468,Q9NZN1,Ligand-Receptor,
+PTPRS,NTRK3,Q13332,Q16288,Receptor-Receptor,
+QRFP,QRFPR,P83859,Q96P65,Ligand-Receptor,
+RBP4,STRA6,P02753,Q9BX79,Ligand-Receptor,
+REN,ATP6AP2,P00797,O75787,Ligand-Receptor,
+RNASET2,TLR8,O00584,Q9NR97,Ligand-Receptor,
+RTN4R,ADGRB1,Q9BZR6,O14514,Ligand-Receptor,
+SAA1,FPR2,P0DJI8,P25090,Ligand-Receptor,
+SFTPD,ADGRE5,P35247,P48960,Ligand-Receptor,
+SIGLEC15,CD44,Q6ZMC9,P16070,Ligand-Receptor,
+SPN,SIGLEC1,P16150,Q9BZZ2,Ligand-Receptor,
+TGM2,ADGRG1,P21980,Q9Y653,Ligand-Receptor,
+THPO,MPL,P40225,P40238,Ligand-Receptor,
+TRH,TRHR,P20396,P34981,Ligand-Receptor,
+TSHB,TSHR,P01222,P16473,Ligand-Receptor,
+TULP1,TYRO3,O00294,Q06418,Ligand-Receptor,
+UNC5A,ADGRL3,Q6ZN44,Q9HAR2,Receptor-Receptor,
+CD177,PECAM1,Q8N6Q3,P16284,Ligand-Receptor,
+CD47,SIRPA,Q08722,P78324,Ligand-Receptor,
+CD47,SIRPG,Q08722,Q9P1W8,Ligand-Receptor,
+DAG1,NRXN3,Q14118,Q9HDB5,Ligand-Receptor,
+HLA-E,VSIR,P13747,Q9H7M9,Ligand-Receptor,
+HLA-F,VSIR,P30511,Q9H7M9,Ligand-Receptor,
+NLGN4Y,NRXN3,Q8NFZ3,Q9HDB5,Ligand-Receptor,
+PVR,KIR2DL5A,P15151,Q8N109,Ligand-Receptor,
+SDC2,FGFR4,P34741,P22455,Ligand-Receptor,
+SEMA4D,PLXNB3,Q92854,Q9ULL4,Ligand-Receptor,
+CD44,TYROBP,P16070,O43914,Ligand-Receptor,
