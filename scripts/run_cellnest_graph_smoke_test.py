@@ -87,6 +87,14 @@ def build_parser():
     p.add_argument("--min-ligand-expression", type=float, default=0.0)
     p.add_argument("--min-receptor-expression", type=float, default=0.0)
     p.add_argument("--distance-weighting", type=str, default="cellnest_flip")
+    p.add_argument(
+        "--normalize",
+        type=str,
+        default=None,
+        choices=["none", "auto", "log1p", "quantile"],
+        help="Expression normalization: auto|log1p|quantile|none. Default: use data as-is "
+        "(warns if it looks like raw counts).",
+    )
     p.add_argument("--block-autocrine", action="store_true")
     p.add_argument(
         "--save-prefix",
@@ -177,6 +185,7 @@ def main(argv=None):
             distance_weighting=args.distance_weighting,
             sample_key=args.sample_key,
             sample_id=args.sample_id,
+            normalize=args.normalize,
             neighbor_mode=args.neighbor_mode,
             k=args.k,
             gene_activity_percentile=percentile,

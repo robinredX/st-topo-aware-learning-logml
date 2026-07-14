@@ -304,6 +304,86 @@ def test_custom_distance_weighting_callable():
 
 
 # ---------------------------------------------------------------------------
+# normalization
+# ---------------------------------------------------------------------------
+def _raw_count_dataset():
+    """A dataset that clearly looks like raw counts (large integers)."""
+    import anndata as ad
+
+    genes = ["LIG_A", "REC_A"]
+    coords = np.array([[0.0, 0.0], [1.0, 0.0]], dtype=float)
+    expr = np.array([[500.0, 0.0], [0.0, 800.0]], dtype=float)
+    a = ad.AnnData(X=expr)
+    a.var_names = genes
+    a.obs_names = ["c0", "c1"]
+    a.obsm["spatial"] = coords
+    lr = pd.DataFrame(
+        {
+            "ligand": ["LIG_A"],
+            "receptor": ["REC_A"],
+            "annotation": ["Secreted Signaling"],
+        }
+    )
+    return a, lr
+
+
+def test_looks_like_raw_counts_detection():
+    from cellnest_graph.data import looks_like_raw_counts
+
+    assert looks_like_raw_counts(np.array([[500.0, 0.0], [3.0, 800.0]]))
+    assert not looks_like_raw_counts(np.array([[0.5, 0.0], [1.2, 2.3]]))  # log-like
+    assert not looks_like_raw_counts(np.array([[-1.0, 0.5], [2.0, -0.3]]))  # z-scored
+
+
+def test_normalize_none_warns_on_raw_counts(caplog):
+    import logging
+
+    a, lr = _raw_count_dataset()
+    with caplog.at_level(logging.WARNING, logger="cellnest_graph"):
+        build_cellnest_graph(a, lr, d_max=1.5, gene_activity_percentile=None)
+    assert any("RAW COUNTS" in r.message for r in caplog.records)
+
+
+def test_normalize_auto_applies_log1p_on_raw_counts():
+    a, lr = _raw_count_dataset()
+    g = build_cellnest_graph(
+        a, lr, d_max=1.5, gene_activity_percentile=None, normalize="auto"
+    )
+    assert g.meta["normalize_applied"] == "log1p(auto)"
+    # node features are now log-scaled (small values), not the original hundreds
+    assert g.node_features.max() < 15.0
+
+
+def test_normalize_auto_skips_when_already_normalized():
+    ds = toy_dataset()  # small values, not raw-count-like
+    g = build_cellnest_graph(
+        ds.adata,
+        ds.lr_pairs,
+        d_max=ds.d_max,
+        gene_activity_percentile=None,
+        block_autocrine=True,
+        normalize="auto",
+    )
+    assert g.meta["normalize_applied"] == "none(auto)"
+    assert _edge_set(g) == _expected_set(ds)  # unchanged
+
+
+def test_normalize_log1p_does_not_mutate_adata():
+    a, lr = _raw_count_dataset()
+    before = a.X.copy()
+    build_cellnest_graph(
+        a, lr, d_max=1.5, gene_activity_percentile=None, normalize="log1p"
+    )
+    assert np.array_equal(a.X, before)  # input AnnData untouched
+
+
+def test_invalid_normalize_raises():
+    ds = toy_dataset()
+    with pytest.raises(GraphInputError, match="normalize"):
+        build_cellnest_graph(ds.adata, ds.lr_pairs, d_max=1.5, normalize="zscore")
+
+
+# ---------------------------------------------------------------------------
 # sparse input + sample handling + converters
 # ---------------------------------------------------------------------------
 def test_sparse_matches_dense():

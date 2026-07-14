@@ -80,6 +80,7 @@ def build_cellnest_graph(
     ) = "cellnest_flip",
     sample_key: str | None = None,
     sample_id=None,
+    normalize: str | None = None,
     # --- extra knobs (documented; sensible CellNEST-like defaults) ---
     neighbor_mode: str = "radius",
     k: int = 50,
@@ -121,6 +122,12 @@ def build_cellnest_graph(
         If both given, restrict to ``adata.obs[sample_key] == sample_id`` (process one
         tissue section at a time). If only ``sample_key`` is given, its value is recorded
         per node but no subsetting happens.
+    normalize : {None, 'none', 'auto', 'log1p', 'quantile'}
+        Expression normalization. ``None`` (default) uses the matrix as given but *warns*
+        if it looks like raw counts. ``'auto'`` applies log1p only when the data looks like
+        raw counts (else skips). ``'log1p'``/``'quantile'`` always apply that method
+        (``'quantile'`` reproduces CellNEST; needs the ``qnorm`` package). ``'none'`` uses
+        as-is with no warning. Normalization is done on a copy; ``adata`` is not mutated.
     neighbor_mode : {'radius', 'knn'}
         Spatial-neighbour criterion. ``'knn'`` keeps ``k`` nearest neighbours.
     gene_activity_percentile : float or None
@@ -193,6 +200,7 @@ def build_cellnest_graph(
     gindex = _data.gene_index_map(gene_ids)
     present = set(gene_ids)
     X = _data.get_expression_matrix(view, expression_layer)
+    X, normalize_applied = _resolve_normalization(X, normalize)
 
     sample_values = _data.get_obs_column(view, sample_key) if sample_key else None
     celltype_values = _data.get_obs_column(view, celltype_key) if celltype_key else None
@@ -399,6 +407,8 @@ def build_cellnest_graph(
         "sample_key": sample_key,
         "sample_id": sample_id,
         "node_feature_mode": node_feature_mode,
+        "normalize": normalize,
+        "normalize_applied": normalize_applied,
     }
 
     graph = CellNestGraph(
@@ -416,6 +426,38 @@ def build_cellnest_graph(
     )
     logger.info("built graph: %s", graph.stats())
     return graph
+
+
+def _resolve_normalization(X, normalize):
+    """Apply/skip normalization per the ``normalize`` option; return (matrix, applied_label).
+
+    ``None``      -> use the matrix as given, but WARN if it looks like raw counts.
+    ``"none"``    -> use as-is, no warning (caller asserts it is already normalized).
+    ``"auto"``    -> normalize with log1p iff the data looks like raw counts, else skip.
+    ``"log1p"`` / ``"quantile"`` -> always apply that method.
+    """
+    if normalize in (None, "none"):
+        if normalize is None and _data.looks_like_raw_counts(X):
+            logger.warning(
+                "expression looks like RAW COUNTS but normalize=None. Pass "
+                "normalize='auto' (or 'log1p'/'quantile'), or normalize the AnnData first. "
+                "Building on raw counts is usually not what you want."
+            )
+        return X, "none"
+    if normalize == "auto":
+        if _data.looks_like_raw_counts(X):
+            logger.info(
+                "normalize='auto': data looks like raw counts -> applying log1p"
+            )
+            return _data.normalize_matrix(X, "log1p"), "log1p(auto)"
+        logger.info("normalize='auto': data already looks normalized -> skipping")
+        return X, "none(auto)"
+    if normalize in ("log1p", "quantile"):
+        logger.info("applying %s normalization", normalize)
+        return _data.normalize_matrix(X, normalize), normalize
+    raise _val.GraphInputError(
+        f"normalize must be one of None, 'none', 'auto', 'log1p', 'quantile'; got {normalize!r}"
+    )
 
 
 def _build_node_features(X, gene_ids, mode: str, celltype_values):

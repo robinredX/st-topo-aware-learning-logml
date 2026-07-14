@@ -29,6 +29,70 @@ def get_expression_matrix(adata, layer: str | None = None):
     return adata.X if layer is None else adata.layers[layer]
 
 
+# --- normalization ---------------------------------------------------------
+def looks_like_raw_counts(matrix, sample: int = 2000) -> bool:
+    """Heuristic: does this matrix look like un-normalized raw counts?
+
+    True when the (sampled) non-zero values are non-negative and (near-)integer with a large
+    maximum -- i.e. classic count data. False for log/CPM/z-scored data (small or negative
+    values, non-integers). This is a heuristic guardrail, not a guarantee.
+    """
+    if is_sparse(matrix):
+        vals = np.asarray(matrix.data[:sample], dtype=float)
+    else:
+        arr = np.asarray(matrix, dtype=float)
+        flat = arr.ravel()
+        vals = flat[flat != 0][:sample]
+    if vals.size == 0:
+        return False
+    if vals.min() < 0:
+        return False  # z-scored / scaled -> already transformed
+    integral = np.allclose(vals, np.round(vals))
+    return bool(integral and vals.max() >= 50)
+
+
+def normalize_matrix(matrix, method: str, target_sum: float = 1e4):
+    """Return a normalized copy of ``matrix`` (does not mutate the input).
+
+    Methods
+    -------
+    "log1p"    : total-count normalize each cell to ``target_sum`` then ``log1p`` (scanpy's
+                 standard workflow). Keeps sparsity.
+    "quantile" : CellNEST-style quantile normalization across cells (needs the ``qnorm``
+                 package). Returns a dense array.
+    """
+    if method == "log1p":
+        if is_sparse(matrix):
+            X = matrix.tocsr(copy=True).astype(float)
+            row_sums = np.asarray(X.sum(axis=1)).ravel()
+            row_sums[row_sums == 0] = 1.0
+            scale = target_sum / row_sums
+            X = X.multiply(scale[:, None]).tocsr()
+            X.data = np.log1p(X.data)
+            return X
+        X = np.asarray(matrix, dtype=float).copy()
+        row_sums = X.sum(axis=1)
+        row_sums[row_sums == 0] = 1.0
+        X = X * (target_sum / row_sums)[:, None]
+        return np.log1p(X)
+    if method == "quantile":
+        try:
+            import qnorm
+        except Exception as exc:  # pragma: no cover
+            raise ImportError(
+                "normalize='quantile' needs the 'qnorm' package (pip install qnorm)."
+            ) from exc
+        dense = (
+            np.asarray(matrix.todense(), dtype=float)
+            if is_sparse(matrix)
+            else np.asarray(matrix, dtype=float)
+        )
+        return np.transpose(qnorm.quantile_normalize(np.transpose(dense)))
+    raise ValueError(
+        f"unknown normalization method {method!r}; use 'log1p' or 'quantile'"
+    )
+
+
 def gene_symbols(adata, uppercase: bool = True) -> list[str]:
     """Gene symbols from ``var_names``; upper-cased to match CellNEST's matching."""
     names = [str(g) for g in adata.var_names]

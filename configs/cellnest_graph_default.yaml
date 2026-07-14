@@ -27,6 +27,13 @@ build:
                                 #   TUNE PER DATASET. CellNEST auto-sets ~4x nearest-neighbour spacing.
   k: 50                         # neighbours kept when neighbor_mode == "knn" (CellNEST --k default)
 
+  # expression normalization (done on a copy; adata is not mutated)
+  normalize: null               # null = use data as-is but WARN if it looks like raw counts.
+                                #   auto  -> log1p only if data looks like raw counts, else skip
+                                #   log1p -> total-count normalize + log1p (scanpy standard)
+                                #   quantile -> CellNEST-style quantile normalization (needs qnorm)
+                                #   none  -> use as-is, no warning
+
   # which genes count as "expressed" in a cell
   gene_activity_percentile: 98.0  # per-cell activity percentile (CellNEST --threshold_gene_exp default 98).
                                   #   set null to disable and rely only on the absolute floors below.
