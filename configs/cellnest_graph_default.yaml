@@ -1,0 +1,70 @@
+# Default configuration / hyperparameters for the CellNEST-style graph builder
+# (src/cellnest_graph). Every key maps 1:1 to a `build_cellnest_graph(...)` argument.
+#
+# These are the values our reproduction uses by default. Where a value mirrors the
+# original CellNEST default it is noted. See docs/cellnest_graph_reference.md for the trace
+# and reports/cellnest_graph_reproduction_report.md for the rationale/deviations.
+#
+# Load in Python:
+#   import yaml; cfg = yaml.safe_load(open("configs/cellnest_graph_default.yaml"))
+#   graph = build_cellnest_graph(adata, lr_pairs, **cfg["build"])
+# Or via the CLI:  python scripts/run_cellnest_graph_smoke_test.py --config configs/cellnest_graph_default.yaml
+
+# ---- inputs ----------------------------------------------------------------
+inputs:
+  spatial_key: spatial          # adata.obsm key holding coordinates
+  expression_layer: null        # null -> use adata.X; else a layer name
+  lr_csv: data/ligand_receptor_pairs.csv   # ligand-receptor table (source,target = ligand,receptor)
+  sample_key: null              # adata.obs column identifying tissue sections (process one at a time)
+  sample_id: null               # value in sample_key to select (null = use all cells)
+  celltype_key: null            # adata.obs column with cell types (for one-hot features / metadata)
+
+# ---- arguments passed straight to build_cellnest_graph(**build) -----------
+build:
+  # spatial neighbourhood
+  neighbor_mode: radius         # "radius" (distance <= d_max) or "knn"
+  d_max: 30.0                   # neighbourhood radius; UNIT = same as coordinates (e.g. microns/pixels).
+                                #   TUNE PER DATASET. CellNEST auto-sets ~4x nearest-neighbour spacing.
+  k: 50                         # neighbours kept when neighbor_mode == "knn" (CellNEST --k default)
+
+  # expression normalization (done on a copy; adata is not mutated)
+  normalize: null               # null = use data as-is but WARN if it looks like raw counts.
+                                #   auto  -> log1p only if data looks like raw counts, else skip
+                                #   log1p -> total-count normalize + log1p (scanpy standard)
+                                #   quantile -> CellNEST-style quantile normalization (needs qnorm)
+                                #   none  -> use as-is, no warning
+
+  # which genes count as "expressed" in a cell
+  gene_activity_percentile: 98.0  # per-cell activity percentile (CellNEST --threshold_gene_exp default 98).
+                                  #   set null to disable and rely only on the absolute floors below.
+  min_ligand_expression: 0.0      # absolute floor for a gene to be an active ligand
+  min_receptor_expression: 0.0    # absolute floor for a gene to be an active receptor
+
+  # edge weighting
+  distance_weighting: cellnest_flip  # CellNEST's per-receiver min-max flip.
+                                     #   alternatives: none | linear | gaussian
+  gaussian_sigma: null               # only used when distance_weighting == gaussian (null -> d_max/2)
+
+  # signalling options
+  block_autocrine: false        # true drops self-loops (i == j); CellNEST --block_autocrine default 0
+  include_self_loops: true      # allow a cell to be its own neighbour (autocrine candidate)
+  juxtacrine_distance: null     # max distance for Cell-Cell-Contact receptors; null = auto (nearest spacing)
+
+  # coordinates / features
+  coordinate_dims: 2            # keep first N coord columns (2 -> x,y ; 3 -> x,y,z ; null -> all)
+  node_feature_mode: expression # expression | celltype_onehot | none
+  uppercase_genes: true         # match gene symbols case-insensitively (CellNEST upper-cases)
+
+  # scale / smoke-test controls
+  max_cells: null               # SMOKE-TEST ONLY: cap to the FIRST N cells (spatially biased!).
+                                #   For real runs, scale via sample_key/sample_id instead
+                                #   (build_graphs_per_sample builds one graph per section).
+
+# ---- notes -----------------------------------------------------------------
+# * d_max is the single most dataset-dependent hyperparameter: it must be in the SAME UNITS
+#   as adata.obsm['spatial']. For Xenium (microns) 15-30 is a reasonable start; for Visium
+#   (pixels) use a value near the spot spacing. Inspect nearest-neighbour spacing first.
+# * gene_activity_percentile=98 keeps only each cell's top ~2% genes as active ligands/
+#   receptors (sparse, high-confidence edges). Lower it for denser graphs.
+# * Normalisation is NOT done here (unlike CellNEST, which quantile-normalises internally).
+#   Normalise/QC the AnnData (or pass a layer) BEFORE calling the builder.

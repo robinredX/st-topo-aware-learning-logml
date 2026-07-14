@@ -1,0 +1,8 @@
+source,target,ligand,receptor,relation_id,distance,coexpression_score
+0,1,LIG_A,REC_A,0,1.0,15.0
+0,1,LIG_A,REC_B,2,1.0,20.0
+2,1,LIG_B,REC_B,1,1.0,24.0
+0,3,LIG_A,REC_B,2,1.0,10.0
+3,1,LIG_A,REC_A,0,1.4142135623730951,3.0
+3,1,LIG_B,REC_B,1,1.4142135623730951,4.0
+3,1,LIG_A,REC_B,2,1.4142135623730951,4.0

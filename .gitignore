@@ -3,6 +3,8 @@
 *.h5
 *.tar
 data/*.h5ad
+# ...but keep the tiny committed synthetic toy dataset (see data/synthetic_toy/README.md)
+!data/synthetic_toy/toy.h5ad
 results/
 # notebooks
 .ipynb_checkpoints/
