@@ -87,3 +87,109 @@ def to_toponetx(simplices):
 
 def simplex_counts(simplices):
     return {f"{d}-simplices": len(v) for d, v in sorted(simplices.items())}
+
+
+
+
+def find_incremental_cycle_basis(graph):
+    """
+    Computes a cycle basis incrementally:
+    - First looks for cycles of length 3 (triangles),
+      then cycles of length 4, and so on.
+    - Adds a cycle to the basis only if it is linearly independent
+      (over GF(2)) from the cycles already found.
+    - Stops enumerating cycles as soon as the basis is complete.
+
+    Returns a list of cycles (each as a list of nodes, where the cycle
+    is implicit: the last node connects back to the first).
+    """
+    # Build a map from edges (represented as frozenset) to indices.
+    edge_index = {frozenset({u, v}): i for i, (u, v) in enumerate(graph.edges())}
+    num_edges = len(edge_index)
+
+    # The cycle basis (list of cycles as lists of nodes)
+    basis = []
+    # The basis in bitmask form (vectors over GF(2))
+    basis_bitmasks = []
+
+    def cycle_bitmask(cycle):
+        """
+        Given a cycle (list of nodes), compute the corresponding bitmask.
+        Assumes the edge between the last node and the first exists.
+        """
+        bitmask = 0
+        n = len(cycle)
+        for i in range(n):
+            # Edge is represented as undirected
+            edge = frozenset({cycle[i], cycle[(i + 1) % n]})
+            idx = edge_index[edge]
+            bitmask ^= (1 << idx)
+        return bitmask
+
+    def add_vector_to_basis(vec, basis_bitmasks):
+        """
+        Reduces the candidate vector 'vec' using the current basis (list of bitmasks).
+        If the reduced vector is non-zero, add it to the basis and return True.
+        """
+        for b in basis_bitmasks:
+            pivot = b.bit_length() - 1  # index of the most significant bit
+            if vec & (1 << pivot):
+                vec ^= b
+        if vec != 0:
+            basis_bitmasks.append(vec)
+            # Keep the basis sorted by decreasing pivot.
+            basis_bitmasks.sort(key=lambda x: x.bit_length(), reverse=True)
+            return True
+        return False
+
+    # Theoretical basis size: |E| - |V| + (number of connected components)
+    required_basis_size = num_edges - graph.number_of_nodes() + nx.number_connected_components(graph)
+
+    # Sort nodes to ensure deterministic enumeration
+    nodes = sorted(graph.nodes())
+
+    # To avoid duplicates during cycle enumeration
+    found_cycles = set()  # stores tuples (canonical) of cycle nodes
+
+    def dfs(start, current, depth, L, path, visited):
+        """
+        Search for simple cycles of exactly length L starting from 'start'.
+        Ensures visited nodes are >= start for canonicity.
+        """
+        if depth == L:
+            # If current is adjacent to start, we found a cycle
+            if start in graph[current]:
+                cycle = path[:]  # cycle is the nodes in path (final edge closes the cycle)
+                tup = tuple(cycle)
+                if tup not in found_cycles:
+                    found_cycles.add(tup)
+                    yield cycle
+            return
+
+        for neighbor in graph[current]:
+            # To avoid duplicates, only consider neighbor >= start
+            if neighbor < start:
+                continue
+            if neighbor in visited:
+                continue
+            visited.add(neighbor)
+            path.append(neighbor)
+            yield from dfs(start, neighbor, depth + 1, L, path, visited)
+            path.pop()
+            visited.remove(neighbor)
+
+    # Enumerate cycles by length L = 3, 4, ... up to |V|
+    for L in range(3, graph.number_of_nodes() + 1):
+        for start in nodes:
+            visited = {start}
+            path = [start]
+            for cycle in dfs(start, start, 1, L, path, visited):
+                # Compute bitmask for the found cycle
+                bitmask = cycle_bitmask(cycle)
+                # If the cycle is linearly independent from the current basis, add it.
+                if add_vector_to_basis(bitmask, basis_bitmasks):
+                    basis.append(cycle)
+                    if len(basis_bitmasks) == required_basis_size:
+                        return basis
+
+    return basis
