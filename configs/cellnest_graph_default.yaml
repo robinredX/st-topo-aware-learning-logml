@@ -56,7 +56,9 @@ build:
   uppercase_genes: true         # match gene symbols case-insensitively (CellNEST upper-cases)
 
   # scale / smoke-test controls
-  max_cells: null               # cap number of cells (first N after sample filter); null = all
+  max_cells: null               # SMOKE-TEST ONLY: cap to the FIRST N cells (spatially biased!).
+                                #   For real runs, scale via sample_key/sample_id instead
+                                #   (build_graphs_per_sample builds one graph per section).
 
 # ---- notes -----------------------------------------------------------------
 # * d_max is the single most dataset-dependent hyperparameter: it must be in the SAME UNITS

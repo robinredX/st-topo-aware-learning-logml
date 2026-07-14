@@ -16,8 +16,15 @@ import pytest
 # Make `src/` importable without installation.
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
 
-from cellnest_graph import build_cellnest_graph  # noqa: E402
-from cellnest_graph.synthetic import autocrine_dataset, toy_dataset  # noqa: E402
+from cellnest_graph import (  # noqa: E402
+    build_cellnest_graph,
+    build_graphs_per_sample,
+)
+from cellnest_graph.synthetic import (  # noqa: E402
+    autocrine_dataset,
+    multi_sample_dataset,
+    toy_dataset,
+)
 from cellnest_graph.validation import GraphInputError  # noqa: E402
 
 
@@ -411,6 +418,54 @@ def test_sample_subsetting_and_metadata():
     assert "cell_type" in g.node_table.columns
     assert "sample" in g.edge_table.columns
     assert set(g.node_table["sample"]) == {"S1"}
+
+
+def test_build_graphs_per_sample_all_sections():
+    adata, lr = multi_sample_dataset()
+    graphs = build_graphs_per_sample(
+        adata,
+        lr,
+        sample_key="sample",
+        d_max=1.5,
+        gene_activity_percentile=None,
+        block_autocrine=True,
+    )
+    assert set(graphs.keys()) == {"S1", "S2"}
+    # each section reproduces the toy graph's 7 edges independently
+    for sid, g in graphs.items():
+        assert g.n_edges == 7
+        assert g.n_nodes == 6
+        assert set(g.node_table["sample"]) == {sid}
+
+
+def test_build_graphs_per_sample_subset_of_ids():
+    adata, lr = multi_sample_dataset()
+    graphs = build_graphs_per_sample(
+        adata,
+        lr,
+        sample_key="sample",
+        sample_ids=["S2"],
+        d_max=1.5,
+        gene_activity_percentile=None,
+        block_autocrine=True,
+    )
+    assert list(graphs.keys()) == ["S2"]
+
+
+def test_build_graphs_per_sample_bad_key_raises():
+    adata, lr = multi_sample_dataset()
+    with pytest.raises(GraphInputError, match="sample_key"):
+        build_graphs_per_sample(adata, lr, sample_key="nope", d_max=1.5)
+
+
+def test_build_graphs_per_sample_skip_errors():
+    adata, lr = multi_sample_dataset()
+    bad_lr = pd.DataFrame({"ligand": ["FOO"], "receptor": ["BAR"], "annotation": [""]})
+    # every section fails (genes absent); skip_errors -> empty dict, no raise
+    graphs = build_graphs_per_sample(
+        adata, bad_lr, sample_key="sample", d_max=1.5, skip_errors=True
+    )
+    assert graphs == {}
 
 
 def test_to_networkx_and_pyg_optional():

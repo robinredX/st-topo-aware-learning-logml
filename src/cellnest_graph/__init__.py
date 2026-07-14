@@ -11,7 +11,11 @@ networks using attention mechanisms on spatial transcriptomics", Nature Methods 
 CellNEST is GPL-3.0; this is an independent reimplementation.
 """
 
-from .builder import build_cellnest_graph, compute_active_cutoffs
+from .builder import (
+    build_cellnest_graph,
+    build_graphs_per_sample,
+    compute_active_cutoffs,
+)
 from .data import load_lr_pairs_csv
 from .relations import RelationRegistry
 from .types import EDGE_FEATURE_NAMES, CellNestGraph
@@ -19,6 +23,7 @@ from .validation import GraphInputError
 
 __all__ = [
     "build_cellnest_graph",
+    "build_graphs_per_sample",
     "compute_active_cutoffs",
     "load_lr_pairs_csv",
     "RelationRegistry",

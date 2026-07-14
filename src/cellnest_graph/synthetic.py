@@ -112,6 +112,27 @@ def toy_dataset(sparse: bool = False, sample_key: bool = False) -> ToyDataset:
     )
 
 
+def multi_sample_dataset():
+    """Two stacked copies of the toy layout labelled sections 'S1' and 'S2'.
+
+    Section 'S2' has its coordinates shifted far from 'S1', so if sections were (wrongly)
+    processed together no cross-section edges could form anyway -- the point is that
+    build_graphs_per_sample builds each independently. Returns (adata, lr_pairs).
+    """
+    coords = np.vstack([TOY_COORDS, TOY_COORDS + 1000.0])
+    expr = np.vstack([TOY_EXPR, TOY_EXPR])
+    samples = ["S1"] * TOY_COORDS.shape[0] + ["S2"] * TOY_COORDS.shape[0]
+    obs = {"sample": samples}
+    import anndata as ad
+
+    a = ad.AnnData(X=expr)
+    a.var_names = list(TOY_GENES)
+    a.obs_names = [f"cell{i}" for i in range(coords.shape[0])]
+    a.obsm["spatial"] = coords
+    a.obs["sample"] = samples
+    return a, TOY_LR_PAIRS.copy()
+
+
 def autocrine_dataset():
     """A 2-cell dataset where cell 0 co-expresses a ligand and its receptor (self-loop)."""
     genes = ["LIG_A", "REC_A"]

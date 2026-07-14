@@ -428,6 +428,68 @@ def build_cellnest_graph(
     return graph
 
 
+def build_graphs_per_sample(
+    adata,
+    lr_pairs: pd.DataFrame,
+    *,
+    sample_key: str,
+    sample_ids=None,
+    skip_errors: bool = False,
+    **kwargs,
+):
+    """Build one graph per tissue section -- the recommended way to scale.
+
+    Cells only signal within the same physical section, so a graph is built independently
+    for each value of ``adata.obs[sample_key]``. Only one section is processed at a time, so
+    peak memory stays at the size of the largest section rather than the whole dataset.
+
+    Parameters
+    ----------
+    adata : AnnData
+        The full (multi-section) dataset.
+    lr_pairs : pandas.DataFrame
+        Ligand-receptor table (see :func:`build_cellnest_graph`).
+    sample_key : str
+        ``adata.obs`` column identifying the section each cell belongs to.
+    sample_ids : iterable or None
+        Which sections to build. ``None`` builds every unique value in ``sample_key``
+        (in first-seen order).
+    skip_errors : bool
+        If True, a section that fails (e.g. no LR genes present) is logged and skipped
+        instead of raising; that section is omitted from the result.
+    **kwargs
+        Passed straight to :func:`build_cellnest_graph` (e.g. ``d_max``, ``normalize``,
+        ``gene_activity_percentile``, ``celltype_key`` ...). Do not pass ``sample_key`` /
+        ``sample_id`` here -- they are handled per section.
+
+    Returns
+    -------
+    dict[Any, CellNestGraph]
+        Mapping section id -> its graph, preserving section order.
+    """
+    if sample_key not in adata.obs:
+        raise _val.GraphInputError(
+            f"sample_key '{sample_key}' not in adata.obs (available: {list(adata.obs.columns)})."
+        )
+    if sample_ids is None:
+        # unique values in first-seen order (pandas.unique preserves order)
+        sample_ids = list(pd.unique(adata.obs[sample_key]))
+
+    graphs: dict = {}
+    for sid in sample_ids:
+        try:
+            graphs[sid] = build_cellnest_graph(
+                adata, lr_pairs, sample_key=sample_key, sample_id=sid, **kwargs
+            )
+        except Exception as exc:  # noqa: BLE001 - surfaced or re-raised below
+            if skip_errors:
+                logger.warning("section %r skipped: %s", sid, exc)
+                continue
+            raise
+    logger.info("built %d/%d section graphs", len(graphs), len(list(sample_ids)))
+    return graphs
+
+
 def _resolve_normalization(X, normalize):
     """Apply/skip normalization per the ``normalize`` option; return (matrix, applied_label).
 
