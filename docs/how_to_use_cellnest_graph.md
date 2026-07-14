@@ -1,8 +1,8 @@
 # How to use `cellnest_graph` (internal guide)
 
-A short, practical guide for the group: what the pipeline does, and how to run it. For the
-"why" and design decisions see [`graph_building_summary.md`](graph_building_summary.md); for
-the CellNEST source trace see [`cellnest_graph_reference.md`](cellnest_graph_reference.md).
+A short, practical guide for the group: what the pipeline does, and how to run it. The
+`cellnest_graph` package reproduces CellNEST's graph-construction stage (Fatema et al.,
+Nature Methods 2025); see the module docstrings for the source-code mapping.
 
 ---
 
@@ -94,7 +94,7 @@ graphs = build_graphs_per_sample(adata, lr, sample_key="sample",
                                  d_max=30.0, normalize="auto")   # -> {section_id: graph}
 ```
 For the full 3.2M-cell dataset, loop manually and save each section to disk instead of
-keeping them all in memory (see `graph_building_summary.md`).
+keeping them all in memory.
 
 ## What you get back (`CellNestGraph`)
 
