@@ -79,6 +79,23 @@ python scripts/run_cellnest_graph_smoke_test.py --adata data/example.h5ad \
 Walk-through with pictures and tables:
 [`notebooks/03_reproduce_cellnest_graph_construction.ipynb`](../notebooks/03_reproduce_cellnest_graph_construction.ipynb).
 
+## Dependencies (do I need special versions?)
+
+**No strict version pins.** It uses stable APIs and runs on current releases. If you use the
+repo's `environment.yml`, you already have everything.
+
+- **Core (always needed):** `numpy`, `scipy`, `pandas`, `anndata`. The builder does *not*
+  import scanpy, sklearn, or torch.
+- **Optional (imported only when you use that feature):**
+  - `scanpy` — reading `.h5ad` in the CLI (the library doesn't need it)
+  - `networkx` — `graph.to_networkx()`
+  - `torch` + `torch-geometric` — `graph.to_pyg()` (install per PyG's matrix so it matches
+    your torch/CUDA build — this is the one real version constraint, and it's PyG's, not ours)
+  - `qnorm` — `normalize="quantile"`; `pyyaml` — CLI `--config`; `pytest` — tests
+
+Tested with numpy 2.2, scipy 1.16, pandas 2.3, anndata 0.12, scanpy 1.11, networkx 3.5
+(Python 3.11–3.13). See [`src/cellnest_graph/requirements.txt`](../src/cellnest_graph/requirements.txt).
+
 ## Where to read more
 
 - Exact trace of CellNEST's code (file/line refs): [`docs/cellnest_graph_reference.md`](cellnest_graph_reference.md)

@@ -1,0 +1,20 @@
+# Dependencies for the cellnest_graph package.
+# Loose lower bounds only — no tight pins are required; the code uses stable APIs.
+# If you already use the repo's environment.yml, everything here is covered.
+
+# --- core (required to build a graph) ---
+numpy>=1.24
+scipy>=1.10
+pandas>=1.5
+anndata>=0.10
+
+# --- optional (each needed ONLY for the feature noted; imported lazily) ---
+# scanpy>=1.10        # read .h5ad files in the CLI (sc.read_h5ad); library itself doesn't need it
+# networkx>=3.0       # graph.to_networkx()
+# torch, torch-geometric   # graph.to_pyg() — install per PyG's matrix to match your torch/CUDA build
+# qnorm>=0.8          # normalize="quantile" (CellNEST-style quantile normalization)
+# pyyaml>=6.0         # CLI --config
+# pytest>=7.0         # running the test suite
+
+# Tested with: numpy 2.2, scipy 1.16, pandas 2.3, anndata 0.12, scanpy 1.11,
+#              networkx 3.5, pyyaml 6.0, pytest 9.0 (Python 3.11–3.13).
