@@ -1,0 +1,4 @@
+ligand,receptor,annotation
+LIG_A,REC_A,Secreted Signaling
+LIG_B,REC_B,Secreted Signaling
+LIG_A,REC_B,Secreted Signaling

@@ -35,7 +35,7 @@ from cellnest_graph import build_cellnest_graph, load_lr_pairs_csv  # noqa: E402
 from cellnest_graph.validation import GraphInputError  # noqa: E402
 
 
-def parse_args(argv=None):
+def build_parser():
     p = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
     )
@@ -55,6 +55,12 @@ def parse_args(argv=None):
         type=str,
         default=None,
         help="Ligand-receptor CSV (defaults to data/ligand_receptor_pairs.csv).",
+    )
+    p.add_argument(
+        "--config",
+        type=str,
+        default=None,
+        help="YAML config (e.g. configs/cellnest_graph_default.yaml). CLI flags override it.",
     )
     p.add_argument("--spatial-key", type=str, default="spatial")
     p.add_argument("--sample-key", type=str, default=None)
@@ -88,20 +94,38 @@ def parse_args(argv=None):
         default=None,
         help="If set, write <prefix>_nodes.csv / _edges.csv / _relations.csv.",
     )
-    return p.parse_args(argv)
+    return p
+
+
+def parse_args(argv=None):
+    return build_parser().parse_args(argv)
+
+
+def apply_config(args):
+    """Fill args from a YAML config for any flag left at its argparse default (CLI wins)."""
+    if not args.config:
+        return args
+    import yaml
+
+    with open(args.config) as fh:
+        cfg = yaml.safe_load(fh) or {}
+    merged = {**cfg.get("inputs", {}), **cfg.get("build", {})}
+    defaults = build_parser().parse_args([])
+    for key, value in merged.items():
+        if hasattr(args, key) and getattr(args, key) == getattr(defaults, key):
+            setattr(args, key, value)
+    return args
 
 
 def main(argv=None):
-    args = parse_args(argv)
+    args = apply_config(parse_args(argv))
     logging.basicConfig(
         level=logging.INFO, format="%(levelname)s %(name)s: %(message)s"
     )
 
+    val = args.gene_activity_percentile
     percentile = (
-        None
-        if args.gene_activity_percentile is not None
-        and args.gene_activity_percentile < 0
-        else args.gene_activity_percentile
+        None if (val is None or (isinstance(val, (int, float)) and val < 0)) else val
     )
 
     # -- load inputs -------------------------------------------------------
