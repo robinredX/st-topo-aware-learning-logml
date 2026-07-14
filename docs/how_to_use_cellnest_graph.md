@@ -2,7 +2,9 @@
 
 A short, practical guide for the group: what the pipeline does, and how to run it. The
 `cellnest_graph` package reproduces CellNEST's graph-construction stage (Fatema et al.,
-Nature Methods 2025); see the module docstrings for the source-code mapping.
+Nature Methods 2025). For the line-by-line trace of the original CellNEST code see
+[`cellnest_graph_reference.md`](cellnest_graph_reference.md); for the full write-up see
+[`../reports/cellnest_graph_reproduction_report.md`](../reports/cellnest_graph_reproduction_report.md).
 
 ---
 
