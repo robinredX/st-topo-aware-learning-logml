@@ -89,7 +89,6 @@ class HOGATInfomax(nn.Module):
         else:
             pos_0, pos_1, pos_2 = self.backbone(x_0, x_1, x_2, *structure)
 
-        x_0_c, x_1_c, x_2_c = self.corrupt_features(x_0, x_1, x_2)
         neg_0, neg_1, neg_2 = self.backbone(x_0_c, x_1_c, x_2_c, *structure)
 
         summary = self.summary_fn(pos_0, pos_1, pos_2)
