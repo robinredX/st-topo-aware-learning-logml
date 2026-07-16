@@ -114,3 +114,17 @@ def test_complex_dgi_structural_requires_null(toy):
     import cellnest_topo as ct
     with pytest.raises(ValueError):
         ct.run_complex_dgi(lc, n_epochs=2, corruption_mode="structural")
+
+
+def test_hogat_encoder_runs(toy):
+    """The HOGAT attention layers run through our lift + DGI harness (needs src/hogat*.py)."""
+    import importlib.util
+    if importlib.util.find_spec("hogat") is None:
+        pytest.skip("hogat modules not on this branch")
+    _, lc = toy
+    import cellnest_topo as ct
+    out = ct.run_complex_dgi(lc, out_dim=8, n_epochs=6, patience=50, log_every=999,
+                             encoder="hogat", heads=2)
+    assert out["embeddings"][0].shape == (lc.n_cells(0), 8)
+    assert torch.isfinite(torch.tensor(out["history"]["train_loss"][-1]))
+

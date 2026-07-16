@@ -194,11 +194,13 @@ def run_complex_dgi(
     corrupt_ranks: list[int] | None = None,
     corruption_mode: str = "cochain",
     null_lifted=None,
+    encoder: str = "simplicial",
+    heads: int = 4,
     device: str = "cpu",
     seed: int = 0,
     **fit_kwargs,
 ) -> dict[str, Any]:
-    """Train the higher-order simplicial DGI on a :class:`LiftedComplex`.
+    """Train the higher-order DGI on a :class:`LiftedComplex`.
 
     Parameters
     ----------
@@ -207,9 +209,11 @@ def run_complex_dgi(
         cochain rows, topology fixed). ``"structural"`` = CORRUPT then LIFT (baseline): the
         negative is a *separate* lifted structural-null complex passed via ``null_lifted``.
     null_lifted : LiftedComplex or list[LiftedComplex] or None
-        Required for ``corruption_mode="structural"`` -- e.g.
-        ``lift_graph_to_complex(structural_null_graph(graph, seed))``. A list is treated as a
-        pool cycled per epoch (more variety, avoids memorising one negative).
+        Required for ``corruption_mode="structural"``.
+    encoder : {"simplicial", "hogat"}
+        ``"simplicial"`` (default) = our Hodge-Laplacian message passing (our DGI loss).
+        ``"hogat"`` = their HOGATInfomax model (``src/hogat*.py``) used as-is, fed by the same
+        lift; requires a 2-complex and ``corruption_mode="cochain"``.
 
     Returns a dict with ``model``, ``history``, ``embeddings`` (dict rank -> numpy) and
     ``baseline_embeddings`` (random-init, per rank).
@@ -224,13 +228,19 @@ def run_complex_dgi(
     _, incs = lifted.to_torch(operator="incidence", device=device)
     in_dims = {r: feats[r].shape[1] for r in ranks}
 
-    encoder = SimplicialEncoder(
-        in_dims, hidden_dim, out_dim, ranks=ranks, n_layers=n_layers
-    ).to(device)
-    model = ComplexDGI(
-        encoder, out_dim=out_dim, ranks=ranks, rank_weights=rank_weights,
-        corrupt_ranks=corrupt_ranks,
-    ).to(device)
+    if encoder == "hogat":
+        from .hogat_encoder import HOGATInfomaxModel  # uses their HOGATInfomax as-is
+
+        if corruption_mode != "cochain":
+            raise ValueError("encoder='hogat' supports corruption_mode='cochain' only.")
+        model = HOGATInfomaxModel(lifted, out_dim=out_dim, n_layers=n_layers,
+                                  heads=heads, device=device).to(device)
+    elif encoder == "simplicial":
+        enc = SimplicialEncoder(in_dims, hidden_dim, out_dim, ranks=ranks, n_layers=n_layers)
+        model = ComplexDGI(enc.to(device), out_dim=out_dim, ranks=ranks,
+                           rank_weights=rank_weights, corrupt_ranks=corrupt_ranks).to(device)
+    else:
+        raise ValueError(f"unknown encoder {encoder!r}")
 
     base = model.embed(feats, laps, incs)
     baseline = {r: base[r].cpu().numpy() for r in ranks}
@@ -245,6 +255,8 @@ def run_complex_dgi(
         neg_pool = [_aligned_torch(nl, ranks, in_dims, device) for nl in pool]
 
     def forward_fn(s):
+        if encoder == "hogat":
+            return model(feats)
         if corruption_mode == "cochain":
             return model(feats, laps, incs, seed=s, mode="cochain")
         nf, nl_, ni = neg_pool[s % len(neg_pool)]
