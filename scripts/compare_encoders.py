@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""A/B the higher-order model: our simplicial DGI vs their HOGATInfomax (as-is)."""
+"""A/B the higher-order model: simplicial DGI vs HOGATInfomax."""
 from __future__ import annotations
 
 import argparse
@@ -51,7 +51,7 @@ def main():
     print(f"[{args.sample_id} {disease}] complex {lc.shape}")
 
     combos, auroc, probe = [], [], []
-    for enc, label in [("simplicial", "simplicial\n(ours)"), ("hogat", "HOGATInfomax\n(theirs)")]:
+    for enc, label in [("simplicial", "simplicial\n(Hodge-Laplacian)"), ("hogat", "HOGATInfomax\n(attention)")]:
         o = ct.run_complex_dgi(lc, out_dim=48, n_epochs=args.epochs, lr=5e-3, patience=30,
                                log_every=10_000, encoder=enc, heads=4)
         f1 = ct.linear_probe(o["embeddings"][0], domain, seed=0)["macro_f1"]
@@ -63,7 +63,7 @@ def main():
     ax[0].set_ylabel("val AUROC"); ax[0].set_ylim(0.4, 1.0); ax[0].set_title("Contrastive quality")
     ax[1].bar(combos, probe, color=["tab:blue", "tab:orange"])
     ax[1].set_ylabel("macro-F1"); ax[1].set_title("Linear probe -> domain")
-    fig.suptitle(f"Higher-order: ours vs theirs (as-is) - section {args.sample_id} ({disease})")
+    fig.suptitle(f"Higher-order encoders: simplicial vs HOGATInfomax - section {args.sample_id} ({disease})")
     fig.tight_layout()
     fp = os.path.join(outdir, "compare_encoders.png")
     fig.savefig(fp, dpi=150, bbox_inches="tight"); plt.close(fig)

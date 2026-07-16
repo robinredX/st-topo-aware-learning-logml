@@ -211,9 +211,9 @@ def run_complex_dgi(
     null_lifted : LiftedComplex or list[LiftedComplex] or None
         Required for ``corruption_mode="structural"``.
     encoder : {"simplicial", "hogat"}
-        ``"simplicial"`` (default) = our Hodge-Laplacian message passing (our DGI loss).
-        ``"hogat"`` = their HOGATInfomax model (``src/hogat*.py``) used as-is, fed by the same
-        lift; requires a 2-complex and ``corruption_mode="cochain"``.
+        ``"simplicial"`` (default) = Hodge-Laplacian message passing with the per-rank DGI
+        loss. ``"hogat"`` = the HOGATInfomax model (``src/hogat*.py``) fed by the same lift;
+        requires a 2-complex and ``corruption_mode="cochain"``.
 
     Returns a dict with ``model``, ``history``, ``embeddings`` (dict rank -> numpy) and
     ``baseline_embeddings`` (random-init, per rank).
@@ -229,7 +229,7 @@ def run_complex_dgi(
     in_dims = {r: feats[r].shape[1] for r in ranks}
 
     if encoder == "hogat":
-        from .hogat_encoder import HOGATInfomaxModel  # uses their HOGATInfomax as-is
+        from .hogat_encoder import HOGATInfomaxModel
 
         if corruption_mode != "cochain":
             raise ValueError("encoder='hogat' supports corruption_mode='cochain' only.")

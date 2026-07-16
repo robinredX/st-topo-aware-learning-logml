@@ -117,7 +117,7 @@ def test_complex_dgi_structural_requires_null(toy):
 
 
 def test_hogat_encoder_runs(toy):
-    """The HOGAT attention layers run through our lift + DGI harness (needs src/hogat*.py)."""
+    """The HOGAT attention layers run through the lift + DGI harness (needs src/hogat*.py)."""
     import importlib.util
     if importlib.util.find_spec("hogat") is None:
         pytest.skip("hogat modules not on this branch")

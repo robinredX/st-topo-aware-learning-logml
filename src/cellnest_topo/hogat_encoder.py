@@ -1,8 +1,8 @@
-"""Thin adapter to train THEIR HOGAT model (src/hogat*.py) on our LiftedComplex.
+"""Adapter to train the HOGAT model (src/hogat*.py) on a LiftedComplex.
 
-Their HOGAT / HOGATLayer / SparseCellAttention / HOGATInfomax are imported and used
-unmodified; this module only maps a LiftedComplex to the operators they expect and wraps
-HOGATInfomax so it plugs into fit_dgi + the evaluation harness.
+HOGAT / HOGATLayer / SparseCellAttention / HOGATInfomax are imported and used unmodified;
+this module only maps a LiftedComplex to the operators they expect and wraps HOGATInfomax so
+it plugs into fit_dgi and the evaluation harness.
 """
 
 from __future__ import annotations
@@ -34,7 +34,7 @@ def lifted_to_hogat_ops(lifted, device: str = "cpu"):
 
 
 class HOGATInfomaxModel(nn.Module):
-    """Wrap THEIR HOGATInfomax (imported as-is) for our fit_dgi loop and eval."""
+    """Wrap HOGATInfomax (imported as-is) for the fit_dgi loop and evaluation."""
 
     def __init__(self, lifted, out_dim=64, n_layers=2, heads=4, device="cpu"):
         super().__init__()
