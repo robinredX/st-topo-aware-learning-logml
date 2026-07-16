@@ -145,72 +145,57 @@ class HOGATLayer(nn.Module):
         incidence_2: torch.Tensor,
         incidence_2_t: torch.Tensor,
         adjacency_2_down: torch.Tensor,
+        return_attention: bool = False,
     ):
         """Forward computation of the HOGAT layer.
 
-        Parameters
-        ----------
-        x_0 : torch.Tensor, shape = (n_nodes, in_channels_0)
-            Input features on the nodes (0-cells).
-        x_1 : torch.Tensor, shape = (n_edges, in_channels_1)
-            Input features on the edges (1-cells).
-        x_2 : torch.Tensor, shape = (n_polygons, in_channels_2)
-            Input features on the polygons (2-cells).
-        adjacency_0_up : torch.sparse.Tensor, shape = (n_nodes, n_nodes)
-            Upper-adjacency matrix of rank 0: two nodes are connected iff
-            they co-bound a common edge.
-        incidence_1 : torch.sparse.Tensor, shape = (n_nodes, n_edges)
-            Co-boundary matrix of rank 0 (equivalently, boundary matrix of
-            rank 1): entry (i, j) is nonzero iff node i is an endpoint of
-            edge j. Brings edge features down to their endpoint nodes.
-        incidence_1_t : torch.sparse.Tensor, shape = (n_edges, n_nodes)
-            Boundary matrix of rank 1 (the transpose of `incidence_1`).
-            Brings node features up to their incident edges.
-        adjacency_1_down : torch.sparse.Tensor, shape = (n_edges, n_edges)
-            Lower-adjacency matrix of rank 1: two edges are connected iff
-            they share an endpoint node.
-        adjacency_1_up : torch.sparse.Tensor, shape = (n_edges, n_edges)
-            Upper-adjacency matrix of rank 1: two edges are connected iff
-            they co-bound a common polygon.
-        incidence_2 : torch.sparse.Tensor, shape = (n_edges, n_polygons)
-            Co-boundary matrix of rank 1 (equivalently, boundary matrix of
-            rank 2): entry (i, j) is nonzero iff edge i bounds polygon j.
-            Brings polygon features down to their bounding edges.
-        incidence_2_t : torch.sparse.Tensor, shape = (n_polygons, n_edges)
-            Boundary matrix of rank 2 (the transpose of `incidence_2`).
-            Brings edge features up to their incident polygons.
-        adjacency_2_down : torch.sparse.Tensor, shape = (n_polygons, n_polygons)
-            Lower-adjacency matrix of rank 2: two polygons are connected
-            iff they share a bounding edge.
+        ...(existing docstring, plus)...
+
+        return_attention : bool, default=False
+            If True, also return a dict of attention weights from every
+            conv sub-module used in this layer.
 
         Returns
         -------
-        x_0 : torch.Tensor, shape = (n_nodes, out_channels)
-            Updated features on the nodes (0-cells).
-        x_1 : torch.Tensor, shape = (n_edges, out_channels)
-            Updated features on the edges (1-cells).
-        x_2 : torch.Tensor, shape = (n_polygons, out_channels)
-            Updated features on the polygons (2-cells).
+        x_0, x_1, x_2 : as before.
+        attention : dict, optional
+            Only returned if `return_attention` is True. Keys identify the
+            neighborhood (e.g. "0_coboundary", "0_up", "1_boundary", ...),
+            values are whatever each conv module returns as its attention
+            weights (e.g. `(edge_index, alpha)`).
         """
+        attention = {} if return_attention else None
+
+        def _run(conv, src, dst, neighborhood, key):
+            if return_attention:
+                out, target_idx, source_idx, att = conv(
+                    src, dst, neighborhood, return_attention_weights=True
+                )
+                attention[key] = (target_idx, source_idx, att)
+                return out
+            return conv(src, dst, neighborhood)
+
         # ---- nodes: co-boundary + upper adjacency ----
-        m_0 = self.conv_0_coboundary(x_1, x_0, incidence_1) + self.conv_0_up(
-            x_0, x_0, adjacency_0_up
+        m_0 = _run(self.conv_0_coboundary, x_1, x_0, incidence_1, "0_coboundary") + _run(
+            self.conv_0_up, x_0, x_0, adjacency_0_up, "0_up"
         )
         x_0_new = self._update(self.lin_0, m_0, x_0)
 
         # ---- edges: boundary + co-boundary + lower adjacency + upper adjacency ----
         m_1 = (
-            self.conv_1_boundary(x_0, x_1, incidence_1_t)
-            + self.conv_1_coboundary(x_2, x_1, incidence_2)
-            + self.conv_1_down(x_1, x_1, adjacency_1_down)
-            + self.conv_1_up(x_1, x_1, adjacency_1_up)
+            _run(self.conv_1_boundary, x_0, x_1, incidence_1_t, "1_boundary")
+            + _run(self.conv_1_coboundary, x_2, x_1, incidence_2, "1_coboundary")
+            + _run(self.conv_1_down, x_1, x_1, adjacency_1_down, "1_down")
+            + _run(self.conv_1_up, x_1, x_1, adjacency_1_up, "1_up")
         )
         x_1_new = self._update(self.lin_1, m_1, x_1)
 
         # ---- polygons: boundary + lower adjacency ----
-        m_2 = self.conv_2_boundary(x_1, x_2, incidence_2_t) + self.conv_2_down(
-            x_2, x_2, adjacency_2_down
+        m_2 = _run(self.conv_2_boundary, x_1, x_2, incidence_2_t, "2_boundary") + _run(
+            self.conv_2_down, x_2, x_2, adjacency_2_down, "2_down"
         )
         x_2_new = self._update(self.lin_2, m_2, x_2)
 
+        if return_attention:
+            return x_0_new, x_1_new, x_2_new, attention
         return x_0_new, x_1_new, x_2_new

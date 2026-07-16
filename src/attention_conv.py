@@ -128,8 +128,12 @@ class SparseCellAttention(nn.Module):
         nn.init.xavier_uniform_(self.att_target)
 
     def forward(
-        self, x_source: torch.Tensor, x_target: torch.Tensor, neighborhood: torch.Tensor
-    ) -> torch.Tensor:
+        self,
+        x_source: torch.Tensor,
+        x_target: torch.Tensor,
+        neighborhood: torch.Tensor,
+        return_attention_weights: bool = False,
+    ):
         """Aggregate attention-weighted messages from source to target cells.
 
         Parameters
@@ -142,12 +146,21 @@ class SparseCellAttention(nn.Module):
             Sparse structural neighborhood matrix (an adjacency or an
             incidence/boundary matrix). Row `i`, column `j` is nonzero iff
             source cell `j` sends a message to target cell `i`.
+        return_attention_weights : bool, default=False
+            If True, also return the normalized attention coefficients
+            together with the (target_idx, source_idx) pairs they refer to.
 
         Returns
         -------
         torch.Tensor, shape = (n_target_cells, heads * out_channels) if
             `concat` else (n_target_cells, out_channels)
             Updated features on the target cells.
+        (edge_index, alpha) : tuple, optional
+            Only returned if `return_attention_weights` is True.
+            edge_index : torch.Tensor, shape = (2, n_messages)
+                Stacked (target_idx, source_idx) pairs, one column per message.
+            alpha : torch.Tensor, shape = (n_messages, heads)
+                Normalized attention coefficient for each message, per head.
         """
         n_target = x_target.size(0)
 
@@ -177,5 +190,15 @@ class SparseCellAttention(nn.Module):
         out.index_add_(0, target_idx, messages)
 
         if self.concat:
-            return out.reshape(n_target, self.heads * self.out_channels)
-        return out.mean(dim=1)
+            out = out.reshape(n_target, self.heads * self.out_channels)
+        else:
+            out = out.mean(dim=1)
+
+        ''' if return_attention_weights:
+            edge_index = torch.stack([target_idx, source_idx], dim=0)
+            return out, (edge_index, attention)
+        return out
+        '''
+        if return_attention_weights:
+            return out, target_idx, source_idx, attention
+        return out

@@ -50,15 +50,31 @@ and a cell-type label in `adata.obs`.
 data/
   ligand_receptor_pairs.csv      gene-symbol LR pairs (from CellPhoneDB)
   cellphonedb/                   canonical CellPhoneDB resource (complex-aware)
+  synthetic_toy/                 tiny hand-checked dataset (tests / no-data smoke runs)
   datasets.md                    dataset links and download notes
 src/
-  topo_utils.py                  build a spatial graph and lift it to a simplicial complex
+  topo_utils.py                  legacy spatial-graph + clique-complex helpers
+  cellnest_graph/                milestone 1: CellNEST-style LR graph construction
+  cellnest_topo/                 milestones 2-3: lift · corruption · GAT/DGI · train · analysis
 notebooks/
-  01_intro_spatial_transcriptomics.ipynb    
-  02_spatial_methods_and_challenges.ipynb   
-slides/                          
+  01_intro_spatial_transcriptomics.ipynb
+  02_spatial_methods_and_challenges.ipynb
+  03_reproduce_cellnest_graph_construction.ipynb   graph construction (milestone 1)
+  04_lift_corruption_contrastive.ipynb             lift → corruption → contrastive (2-3)
+scripts/
+  run_cellnest_graph_smoke_test.py     build a graph (synthetic or real)
+  run_cellnest_topo_pipeline.py        full lift → DGI → probe pipeline (synthetic or real)
+docs/                            reference trace + how-to guides
+reports/                         reproduction report
+tests/                           unit tests (pytest)
+slides/
 environment.yml                  conda environment
 ```
+
+The milestone code is split into two packages: **`cellnest_graph`** reproduces CellNEST up to
+graph construction (see `docs/how_to_use_cellnest_graph.md`), and **`cellnest_topo`** lifts
+that graph to a higher-order complex and does the corruption + contrastive learning (see
+`docs/lifting_and_contrastive.md`).
 
 ## Setup
 
