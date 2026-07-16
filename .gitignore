@@ -3,7 +3,18 @@
 *.h5
 *.tar
 data/*.h5ad
+# ...but keep the tiny committed synthetic toy dataset (see data/synthetic_toy/README.md)
+!data/synthetic_toy/toy.h5ad
 results/
+# large generated outputs (figures, galleries, embeddings, checkpoints) — regenerate via scripts/
+reports/figures/
+*.pt
+*.pth
+*.ckpt
+*.npz
+# jupyter / download scratch
+.download.log
+data/.download.log
 # notebooks
 .ipynb_checkpoints/
 # python

@@ -1,0 +1,7 @@
+cell_id,x,y,sample,cell_type
+cell0,0.0,0.0,S1,A
+cell1,1.0,0.0,S1,B
+cell2,2.0,0.0,S1,C
+cell3,0.0,1.0,S1,A
+cell4,10.0,10.0,S1,B
+cell5,5.0,5.0,S1,C
