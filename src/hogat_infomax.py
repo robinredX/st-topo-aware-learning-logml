@@ -38,17 +38,12 @@ class HOGATInfomax(nn.Module):
         if hasattr(self.backbone, "reset_parameters"):
             self.backbone.reset_parameters()
 
-    @staticmethod
-    def corrupt_features(x_0, x_1, x_2):
-        """Independently shuffle rows within each rank; structure is untouched."""
-        idx_0 = torch.randperm(x_0.size(0), device=x_0.device)
-        idx_1 = torch.randperm(x_1.size(0), device=x_1.device)
-        idx_2 = torch.randperm(x_2.size(0), device=x_2.device)
-        return x_0[idx_0], x_1[idx_1], x_2[idx_2]
+    
 
     def summary_fn(self, x_0, x_1, x_2):
         pooled = torch.cat([x_0.mean(dim=0), x_1.mean(dim=0), x_2.mean(dim=0)], dim=-1)
         return torch.sigmoid(self.summary_proj(pooled))
+        #return pooled
 
     def discriminate(self, z, summary, sigmoid=True):
         value = torch.matmul(z, torch.matmul(self.weight, summary))
@@ -70,7 +65,8 @@ class HOGATInfomax(nn.Module):
     
     def forward(self, x_0, x_1, x_2, adjacency_0_up, incidence_1, incidence_1_t,
                 adjacency_1_down, adjacency_1_up, incidence_2, incidence_2_t,
-                adjacency_2_down, return_attention: bool = False):
+                adjacency_2_down, x_0_c=None, x_1_c=None, x_2_c=None,
+                return_attention: bool = False):
         structure = (adjacency_0_up, incidence_1, incidence_1_t, adjacency_1_down,
                     adjacency_1_up, incidence_2, incidence_2_t, adjacency_2_down)
 
@@ -81,7 +77,6 @@ class HOGATInfomax(nn.Module):
         else:
             pos_0, pos_1, pos_2 = self.backbone(x_0, x_1, x_2, *structure)
 
-        x_0_c, x_1_c, x_2_c = self.corrupt_features(x_0, x_1, x_2)
         neg_0, neg_1, neg_2 = self.backbone(x_0_c, x_1_c, x_2_c, *structure)
 
         summary = self.summary_fn(pos_0, pos_1, pos_2)
@@ -97,4 +92,5 @@ class HOGATInfomax(nn.Module):
         for pz, nz in ((pos_0, neg_0), (pos_1, neg_1), (pos_2, neg_2)):
             pos_loss = pos_loss - torch.log(self.discriminate(pz, summary) + 1e-15).mean()
             neg_loss = neg_loss - torch.log(1 - self.discriminate(nz, summary) + 1e-15).mean()
-        return pos_loss + neg_loss
+        #N = pos_0.size(0) + pos_1.size(0) + pos_2.size(0)
+        return (pos_loss + neg_loss)/2
