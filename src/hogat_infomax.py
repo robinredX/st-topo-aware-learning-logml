@@ -42,8 +42,13 @@ class HOGATInfomax(nn.Module):
 
     def summary_fn(self, x_0, x_1, x_2):
         pooled = torch.cat([x_0.mean(dim=0), x_1.mean(dim=0), x_2.mean(dim=0)], dim=-1)
+<<<<<<< Updated upstream
         return torch.sigmoid(self.summary_proj(pooled))
         #return pooled
+=======
+        #return torch.sigmoid(self.summary_proj(pooled))
+        return pooled
+>>>>>>> Stashed changes
 
     def discriminate(self, z, summary, sigmoid=True):
         value = torch.matmul(z, torch.matmul(self.weight, summary))
@@ -77,6 +82,10 @@ class HOGATInfomax(nn.Module):
         else:
             pos_0, pos_1, pos_2 = self.backbone(x_0, x_1, x_2, *structure)
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
         neg_0, neg_1, neg_2 = self.backbone(x_0_c, x_1_c, x_2_c, *structure)
 
         summary = self.summary_fn(pos_0, pos_1, pos_2)
