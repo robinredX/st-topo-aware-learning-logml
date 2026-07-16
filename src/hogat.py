@@ -99,6 +99,7 @@ class HOGAT(torch.nn.Module):
         incidence_2,
         incidence_2_t,
         adjacency_2_down,
+        return_attention: bool=False
     ):
         """Forward computation through projection, HOGAT layers, and final states.
 
@@ -140,19 +141,40 @@ class HOGAT(torch.nn.Module):
         x_1 = F.elu(self.proj_1(x_1))
         x_2 = F.elu(self.proj_2(x_2))
 
-        for layer in self.layers:
-            x_0, x_1, x_2 = layer(
-                x_0,
-                x_1,
-                x_2,
-                adjacency_0_up,
-                incidence_1,
-                incidence_1_t,
-                adjacency_1_down,
-                adjacency_1_up,
-                incidence_2,
-                incidence_2_t,
-                adjacency_2_down,
-            )
+        all_attention = [] if return_attention else None
 
+        for layer in self.layers:
+            if return_attention:
+                x_0, x_1, x_2, attention = layer(
+                    x_0,
+                    x_1,
+                    x_2,
+                    adjacency_0_up,
+                    incidence_1,
+                    incidence_1_t,
+                    adjacency_1_down,
+                    adjacency_1_up,
+                    incidence_2,
+                    incidence_2_t,
+                    adjacency_2_down,
+                    return_attention=True,
+                )
+                all_attention.append(attention)
+            else:
+                x_0, x_1, x_2 = layer(
+                    x_0,
+                    x_1,
+                    x_2,
+                    adjacency_0_up,
+                    incidence_1,
+                    incidence_1_t,
+                    adjacency_1_down,
+                    adjacency_1_up,
+                    incidence_2,
+                    incidence_2_t,
+                    adjacency_2_down,
+                )
+
+        if return_attention:
+            return x_0, x_1, x_2, all_attention
         return x_0, x_1, x_2

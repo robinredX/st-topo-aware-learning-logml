@@ -1,6 +1,6 @@
 """Visualization of attention scores over edges and polygons of a cell complex."""
 
-import matplotlib.cm as cm
+from matplotlib import colormaps as cm
 import matplotlib.pyplot as plt
 import torch
 from matplotlib.patches import Polygon as MplPolygon
@@ -76,8 +76,8 @@ def edge_and_polygon_attention_scores(sample: dict, layer_attention: dict):
     n_edges = len(sample["edges"])
     n_polys = len(sample["poly_edges"])
 
-    edge_scores = aggregate_attention_by_source(layer_attention["poly_boundary"], n_edges)
-    poly_scores = aggregate_attention_by_source(layer_attention["edge_coboundary"], n_polys)
+    edge_scores = aggregate_attention_by_source(layer_attention["2_boundary"], n_edges)
+    poly_scores = aggregate_attention_by_source(layer_attention["1_coboundary"], n_polys)
     return edge_scores, poly_scores
 
 
@@ -125,12 +125,12 @@ def plot_complex_with_attention(
         poly_scores_np = poly_scores.detach().cpu().numpy()
         pmin, pmax = float(poly_scores_np.min()), float(poly_scores_np.max())
         poly_norm = (poly_scores_np - pmin) / (pmax - pmin + 1e-9)
-        poly_cmap = cm.get_cmap(poly_cmap_name)
+        poly_cmap = cm[poly_cmap_name]
     if edge_scores is not None:
         edge_scores_np = edge_scores.detach().cpu().numpy()
         emin, emax = float(edge_scores_np.min()), float(edge_scores_np.max())
         edge_norm = (edge_scores_np - emin) / (emax - emin + 1e-9)
-        edge_cmap = cm.get_cmap(edge_cmap_name)
+        edge_cmap = cm[edge_cmap_name]
 
     # polygons (shaded by attention received)
     for j, cycle in enumerate(poly_cycles):
