@@ -42,13 +42,20 @@ class HOGATInfomax(nn.Module):
 
     def summary_fn(self, x_0, x_1, x_2):
         pooled = torch.cat([x_0.mean(dim=0), x_1.mean(dim=0), x_2.mean(dim=0)], dim=-1)
-<<<<<<< Updated upstream
         return torch.sigmoid(self.summary_proj(pooled))
         #return pooled
-=======
-        #return torch.sigmoid(self.summary_proj(pooled))
-        return pooled
->>>>>>> Stashed changes
+
+    @staticmethod
+    def corrupt_features(x_0, x_1, x_2):
+        """Independently shuffle rows within each rank; structure is untouched."""
+        idx_0 = torch.randperm(x_0.size(0), device=x_0.device)
+        idx_1 = torch.randperm(x_1.size(0), device=x_1.device)
+        idx_2 = torch.randperm(x_2.size(0), device=x_2.device)
+        return x_0[idx_0], x_1[idx_1], x_2[idx_2]
+
+    def summary_fn(self, x_0, x_1, x_2):
+        pooled = torch.cat([x_0.mean(dim=0), x_1.mean(dim=0), x_2.mean(dim=0)], dim=-1)
+        return torch.sigmoid(self.summary_proj(pooled))
 
     def discriminate(self, z, summary, sigmoid=True):
         value = torch.matmul(z, torch.matmul(self.weight, summary))
@@ -82,10 +89,7 @@ class HOGATInfomax(nn.Module):
         else:
             pos_0, pos_1, pos_2 = self.backbone(x_0, x_1, x_2, *structure)
 
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
+        x_0_c, x_1_c, x_2_c = self.corrupt_features(x_0, x_1, x_2)
         neg_0, neg_1, neg_2 = self.backbone(x_0_c, x_1_c, x_2_c, *structure)
 
         summary = self.summary_fn(pos_0, pos_1, pos_2)
