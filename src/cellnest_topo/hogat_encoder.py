@@ -53,7 +53,13 @@ class HOGATInfomaxModel(nn.Module):
         self.ranks = [0, 1, 2]
 
     def forward(self, feats, *args, **kwargs):
-        pos, neg, summary = self.model(feats[0], feats[1], feats[2], *self._structure)
+        # DGI corruption is the caller's responsibility (matches src/main.ipynb):
+        # build the corrupted view here and pass it into the model.
+        x_0_c, x_1_c, x_2_c = self.model.corrupt_features(feats[0], feats[1], feats[2])
+        pos, neg, summary = self.model(
+            feats[0], feats[1], feats[2], *self._structure,
+            x_0_c=x_0_c, x_1_c=x_1_c, x_2_c=x_2_c,
+        )
         loss = self.model.loss(pos, neg, summary)
         info = {}
         for r in self.ranks:
